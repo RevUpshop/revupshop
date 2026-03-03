@@ -12,8 +12,8 @@
         .unbounded { font-family: 'Unbounded', sans-serif; }
 
         .glass-header { 
-            background: rgba(255, 255, 255, 0.8); 
-            backdrop-filter: blur(25px) saturate(150%); 
+            background: rgba(255, 255, 255, 0.9); 
+            backdrop-filter: blur(20px); 
             border-bottom: 1px solid rgba(0,0,0,0.05); 
         }
 
@@ -21,164 +21,161 @@
             background: var(--dark);
             color: #fff;
             border-radius: 20px;
-            padding: 22px 45px;
+            padding: 18px 35px;
             font-weight: 800;
             text-transform: uppercase;
-            letter-spacing: 0.15em;
+            letter-spacing: 0.12em;
             transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
             display: inline-block;
+            text-align: center;
         }
         .btn-volume:hover { 
-            transform: translateY(-7px) scale(1.02); 
+            transform: translateY(-5px); 
             background: var(--red);
-            box-shadow: 0 25px 50px rgba(255, 59, 48, 0.3);
+            box-shadow: 0 15px 30px rgba(255, 59, 48, 0.3);
         }
 
         .fab {
-            position: fixed; right: 35px; bottom: 35px; z-index: 999;
-            width: 70px; height: 70px; background: var(--red); border-radius: 50%;
+            position: fixed; right: 25px; bottom: 25px; z-index: 999;
+            width: 60px; height: 60px; background: var(--red); border-radius: 50%;
             display: flex; align-items: center; justify-content: center;
-            box-shadow: 0 15px 35px rgba(255, 59, 48, 0.4); animation: pulse 2s infinite;
+            box-shadow: 0 10px 25px rgba(255, 59, 48, 0.3); animation: pulse 2s infinite;
         }
         
         @keyframes pulse {
-            0% { box-shadow: 0 0 0 0 rgba(255, 59, 48, 0.7); }
-            70% { box-shadow: 0 0 0 20px rgba(255, 59, 48, 0); }
+            0% { box-shadow: 0 0 0 0 rgba(255, 59, 48, 0.6); }
+            70% { box-shadow: 0 0 0 15px rgba(255, 59, 48, 0); }
             100% { box-shadow: 0 0 0 0 rgba(255, 59, 48, 0); }
         }
 
         @keyframes float {
             0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-20px); }
+            50% { transform: translateY(-15px); }
         }
-        .animate-float { animation: float 6s ease-in-out infinite; }
+        .animate-float { animation: float 5s ease-in-out infinite; }
 
-        .reveal { opacity: 0; transform: translateY(30px); animation: fadeInUp 1s forwards; }
-        @keyframes fadeInUp { to { opacity: 1; transform: translateY(0); } }
-
-        .product-mini-card { transition: 0.4s cubic-bezier(0.23, 1, 0.32, 1); }
+        .product-mini-card { 
+            transition: all 0.4s ease;
+            border: 1px solid transparent;
+        }
+        .product-mini-card:hover {
+            border-color: #f0f0f0;
+            transform: translateY(-10px);
+        }
         ::selection { background: #ff3b30; color: white; }
     </style>
 </head>
 <body>
 
-    <header class="fixed top-0 w-full z-50 glass-header">
-        <div class="max-w-[1440px] mx-auto px-10 h-24 flex justify-between items-center">
-            <div class="flex items-center gap-4">
-                <img src="logo.png" alt="RevUp" class="h-12 w-auto object-contain">
-                <span class="unbounded text-2xl font-black tracking-tighter uppercase">Rev<span class="text-red-500 italic">Up</span></span>
+    <header class="fixed top-0 w-full z-[100] glass-header">
+        <div class="max-w-[1440px] mx-auto px-6 md:px-10 h-20 md:h-24 flex justify-between items-center">
+            <div class="flex items-center gap-3">
+                <img src="logo.png" alt="RevUp" class="h-8 md:h-10 w-auto">
+                <span class="unbounded text-xl md:text-2xl font-black tracking-tighter uppercase leading-none">Rev<span class="text-red-500 italic">Up</span></span>
             </div>
-            <nav class="hidden lg:flex gap-12 text-[11px] font-black uppercase tracking-[0.3em] text-gray-400 items-center">
-                <a href="#catalog" class="hover:text-black transition">Каталог</a>
-                <a href="#about" class="hover:text-black transition">Про нас</a>
-                <a href="tel:0959002185" class="text-black font-bold border-b border-red-500">095 900 21 85</a>
+            <nav class="hidden lg:flex gap-10 text-[10px] font-black uppercase tracking-[0.2em] text-gray-500 items-center">
+                <a href="#catalog" class="hover:text-red-500 transition">Каталог</a>
+                <a href="#about" class="hover:text-red-500 transition">Про нас</a>
+                <a href="tel:0959002185" class="text-black border-b-2 border-red-500 pb-1">095 900 21 85</a>
             </nav>
         </div>
     </header>
 
     <a href="tel:0959002185" class="fab">
-        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
     </a>
 
-    <section class="min-h-screen flex items-center pt-32 px-10 relative overflow-hidden">
-        <div class="absolute top-20 right-0 w-[600px] h-[600px] bg-red-500/5 blur-[120px] rounded-full"></div>
-        <div class="max-w-[1440px] mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-20 items-center relative z-10">
-            <div class="reveal">
-                <span class="text-red-500 font-black uppercase tracking-[0.5em] text-[11px] mb-8 block">New Collection 2026</span>
-                <h1 class="unbounded text-7xl md:text-[110px] font-black leading-[0.85] mb-12 uppercase">DRIVE <br><span class="text-red-500 italic">PURE.</span></h1>
-                <p class="text-gray-400 text-xl max-w-lg mb-14 leading-relaxed font-medium border-l-4 border-red-500 pl-8">Преміальні аксесуари, що перетворюють кожну поїздку на винятковий досвід.</p>
-                <div class="flex items-center gap-10">
-                    <a href="#catalog" class="btn-volume">До колекції</a>
-                    <a href="tel:0959002185" class="text-[10px] font-black uppercase tracking-[0.3em] hover:text-red-500 transition">Консультація →</a>
+    <section class="min-h-screen flex items-center pt-20 px-6 md:px-10 relative overflow-hidden bg-[#fafafa]">
+        <div class="absolute -top-20 -right-20 w-[400px] md:w-[700px] h-[400px] md:h-[700px] bg-red-500/5 blur-[120px] rounded-full"></div>
+        
+        <div class="max-w-[1440px] mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-10 md:gap-20 items-center relative z-10">
+            <div class="text-center lg:text-left pt-10 md:pt-0">
+                <span class="text-red-500 font-black uppercase tracking-[0.4em] text-[10px] md:text-[11px] mb-6 block">New Collection 2026</span>
+                <h1 class="unbounded text-5xl md:text-7xl xl:text-[100px] font-black leading-[0.9] mb-8 uppercase">DRIVE <br class="hidden md:block"><span class="text-red-500 italic">PURE.</span></h1>
+                <p class="text-gray-500 text-lg md:text-xl max-w-lg mb-10 leading-relaxed font-medium mx-auto lg:ml-0 border-l-0 lg:border-l-4 border-red-500 lg:pl-8">Преміальні аксесуари, що перетворюють кожну поїздку на винятковий досвід.</p>
+                <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-6 md:gap-10">
+                    <a href="#catalog" class="btn-volume w-full sm:w-auto">До колекції</a>
+                    <a href="tel:0959002185" class="text-[10px] font-black uppercase tracking-[0.2em] hover:text-red-500 transition">Консультація →</a>
                 </div>
             </div>
             <div class="flex justify-center relative">
-                <div class="absolute inset-0 bg-red-500/10 rounded-full blur-[100px] animate-pulse"></div>
-                <img src="logo.png" class="relative z-10 w-full max-w-[550px] animate-float drop-shadow-2xl" alt="RevUp Elite">
+                <div class="absolute inset-0 bg-red-500/10 rounded-full blur-[80px] animate-pulse"></div>
+                <img src="logo.png" class="relative z-10 w-full max-w-[300px] md:max-w-[500px] animate-float drop-shadow-2xl" alt="RevUp Elite">
             </div>
         </div>
     </section>
 
-    <section id="catalog" class="py-20 px-6 max-w-[1440px] mx-auto">
-        <div class="mb-16 flex justify-between items-end border-b border-gray-100 pb-8">
-            <div>
-                <h2 class="unbounded text-4xl font-black italic tracking-tighter uppercase">Колекція <span class="text-red-500">2026</span></h2>
-                <p class="text-gray-400 text-xs font-bold uppercase tracking-widest mt-2">Преміальні аксесуари для вашого авто</p>
-            </div>
+    <section id="catalog" class="py-24 px-6 max-w-[1440px] mx-auto">
+        <div class="mb-12 md:mb-16 border-b border-gray-100 pb-8">
+            <h2 class="unbounded text-3xl md:text-4xl font-black italic tracking-tighter uppercase text-center md:text-left">Колекція <span class="text-red-500">2026</span></h2>
+            <p class="text-gray-400 text-[10px] font-bold uppercase tracking-widest mt-2 text-center md:text-left text-red-500/60">Limited edition</p>
         </div>
 
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-10">
             <div class="product-mini-card group">
-                <div class="relative rounded-[35px] overflow-hidden aspect-square bg-[#fcfcfc] border border-gray-50 shadow-sm">
+                <div class="relative rounded-[30px] overflow-hidden aspect-square bg-[#fcfcfc] border border-gray-100">
                     <img src="https://images.unsplash.com/photo-1614165939092-45194451648d?q=80&w=1974" class="w-full h-full object-cover transition duration-700 group-hover:scale-110">
-                    <div class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300">
-                        <a href="product-nappa.html" class="bg-white text-black px-6 py-3 rounded-xl font-black uppercase text-[9px] tracking-widest hover:bg-red-500 hover:text-white transition">Переглянути</a>
+                    <div class="absolute inset-0 bg-black/60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300">
+                        <a href="product-nappa.html" class="bg-white text-black px-6 py-3 rounded-full font-black uppercase text-[9px] tracking-widest hover:bg-red-500 hover:text-white transition">Переглянути</a>
                     </div>
                 </div>
-                <div class="mt-6 px-2">
-                    <h3 class="unbounded text-sm font-bold uppercase">Брелок <span class="text-red-500">Nappa</span></h3>
-                    <div class="flex justify-between items-center mt-3">
-                        <span class="unbounded text-lg font-black italic">890 ₴</span>
-                        <a href="product-nappa.html" class="text-[9px] font-black uppercase text-red-500 border-b border-red-500">Купити</a>
+                <div class="mt-6 px-2 flex justify-between items-start">
+                    <div>
+                        <h3 class="unbounded text-xs font-bold uppercase text-gray-400 mb-1 tracking-widest">Брелок</h3>
+                        <p class="unbounded text-sm font-black uppercase">Nappa Series</p>
                     </div>
+                    <span class="unbounded text-lg font-black italic text-red-500">890 ₴</span>
                 </div>
             </div>
 
             <div class="product-mini-card group">
-                <div class="relative rounded-[35px] overflow-hidden aspect-square bg-[#fcfcfc] border border-gray-50 shadow-sm">
+                <div class="relative rounded-[30px] overflow-hidden aspect-square bg-[#fcfcfc] border border-gray-100">
                     <img src="test.jpg" class="w-full h-full object-cover transition duration-700 group-hover:scale-110">
-                    <div class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300">
-                        <a href="product-test.html" class="bg-white text-black px-6 py-3 rounded-xl font-black uppercase text-[9px] tracking-widest hover:bg-red-500 hover:text-white transition">Переглянути</a>
+                    <div class="absolute inset-0 bg-black/60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300">
+                        <a href="product-test.html" class="bg-white text-black px-6 py-3 rounded-full font-black uppercase text-[9px] tracking-widest hover:bg-red-500 hover:text-white transition">Переглянути</a>
                     </div>
                 </div>
-                <div class="mt-6 px-2">
-                    <h3 class="unbounded text-sm font-bold uppercase">Килимки <span class="text-red-500">Nappa</span></h3>
-                    <div class="flex justify-between items-center mt-3">
-                        <span class="unbounded text-lg font-black italic">2 890 ₴</span>
-                        <a href="product-test.html" class="text-[9px] font-black uppercase text-red-500 border-b border-red-500">Купити</a>
-                    </div>                
+                <div class="mt-6 px-2 flex justify-between items-start">
+                    <div>
+                        <h3 class="unbounded text-xs font-bold uppercase text-gray-400 mb-1 tracking-widest">Килимки</h3>
+                        <p class="unbounded text-sm font-black uppercase">Carbon Nappa</p>
+                    </div>
+                    <span class="unbounded text-lg font-black italic text-red-500">2 890 ₴</span>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="about" class="py-40 bg-black text-white relative overflow-hidden">
-        <div class="max-w-[1440px] mx-auto px-10 grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+    <section id="about" class="py-24 md:py-40 bg-black text-white relative overflow-hidden">
+        <div class="max-w-[1440px] mx-auto px-6 md:px-10 grid grid-cols-1 lg:grid-cols-2 gap-16 md:gap-20 items-center">
             <div class="relative">
-                <img src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?q=80&w=2070" class="rounded-[40px] h-[500px] w-full object-cover grayscale hover:grayscale-0 transition duration-1000">
+                <img src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?q=80&w=2070" class="rounded-[30px] md:rounded-[40px] h-[400px] md:h-[500px] w-full object-cover grayscale hover:grayscale-0 transition duration-1000">
+                <div class="absolute -bottom-6 -right-6 bg-red-500 p-8 rounded-[30px] hidden md:block">
+                    <div class="unbounded text-4xl font-black">100%</div>
+                    <div class="text-[9px] uppercase font-bold tracking-widest opacity-80">Quality Control</div>
+                </div>
             </div>
             <div>
-                <span class="text-red-500 font-black uppercase tracking-[0.6em] text-[12px] mb-10 block">Навіщо ми це робимо?</span>
-                <h2 class="unbounded text-6xl font-black leading-tight mb-12 uppercase">МИ — ЦЕ <span class="text-red-500 italic">REVUP.</span></h2>
-                <p class="text-gray-400 text-xl font-light mb-16">Ми створюємо умови для вашої переваги на дорозі. Кожен продукт RevUp має бути ідеальним.</p>
+                <span class="text-red-500 font-black uppercase tracking-[0.5em] text-[11px] mb-8 block text-center lg:text-left">Навіщо ми це робимо?</span>
+                <h2 class="unbounded text-4xl md:text-6xl font-black leading-tight mb-8 uppercase text-center lg:text-left">МИ — ЦЕ <span class="text-red-500 italic">REVUP.</span></h2>
+                <p class="text-gray-400 text-lg md:text-xl font-light mb-12 text-center lg:text-left leading-relaxed">Ми не просто продаємо деталі. Ми створюємо умови для вашої переваги на дорозі. Кожен продукт RevUp — це поєднання технологій та стилю.</p>
                 
-                <div class="grid grid-cols-2 gap-10 mb-16 text-center md:text-left">
-                    <div class="border-t border-white/10 pt-8">
-                        <div class="unbounded text-4xl font-black">100%</div>
-                        <div class="text-gray-500 text-[9px] uppercase font-bold tracking-widest">Quality</div>
+                <div class="p-6 md:p-8 bg-white/5 rounded-[30px] border border-white/10 flex flex-col sm:row justify-between items-center gap-6">
+                    <div class="text-center sm:text-left">
+                        <div class="text-gray-500 text-[9px] uppercase font-bold mb-1 tracking-widest">Контактний центр:</div>
+                        <a href="tel:0959002185" class="unbounded text-xl md:text-2xl font-black hover:text-red-500 transition">095 900 21 85</a>
                     </div>
-                    <div class="border-t border-white/10 pt-8">
-                        <div class="unbounded text-4xl font-black">24/7</div>
-                        <div class="text-gray-500 text-[9px] uppercase font-bold tracking-widest">Support</div>
-                    </div>
-                </div>
-
-                <div class="p-8 bg-white/5 rounded-[30px] border border-white/10 flex flex-col md:flex-row justify-between items-center gap-6">
-                    <div class="text-center md:text-left">
-                        <div class="text-gray-500 text-[9px] uppercase font-bold mb-1">Зателефонуйте нам:</div>
-                        <a href="tel:0959002185" class="unbounded text-2xl font-black hover:text-red-500 transition">095 900 21 85</a>
-                    </div>
-                    <a href="tel:0959002185" class="btn-volume !py-4 !px-8">Дзвінок</a>
+                    <a href="tel:0959002185" class="btn-volume !bg-red-500 w-full sm:w-auto !py-4">Замовити дзвінок</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <footer class="py-20 text-center border-t border-gray-50">
+    <footer class="py-16 text-center border-t border-gray-50">
         <div class="unbounded text-2xl font-black mb-4 uppercase">Rev<span class="text-red-500">Up</span></div>
-        <p class="text-black-400 text-[10px] uppercase tracking-[0.5em] mb-4 italic">Precision & Style</p>
-        <div class="black-200 text-[9px] font-bold uppercase tracking-widest">© 2026 REVUP PERFORMANCE</div>
+        <p class="text-gray-400 text-[9px] uppercase tracking-[0.5em] mb-6 italic">Precision & Style</p>
+        <div class="text-gray-300 text-[8px] font-bold uppercase tracking-widest">© 2026 REVUP PERFORMANCE — Всі права захищені</div>
     </footer>
+
 </body>
 </html>
