@@ -63,6 +63,28 @@
             transform: translateY(-10px);
         }
         ::selection { background: #ff3b30; color: white; }
+        .product-card {
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.product-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    border-color: rgba(239, 68, 68, 0.5);
+    box-shadow: 0 20px 40px -15px rgba(239, 68, 68, 0.3);
+}
+.glass-card {
+    background: rgba(255, 255, 255, 0.03); /* Дуже прозорий білий */
+    backdrop-filter: blur(12px); /* Розмиття фону */
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1); /* Тонка світла рамка */
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+
+.glass-card:hover {
+    border: 1px solid rgba(239, 68, 68, 0.4); /* Підсвітка червоним при наведенні */
+    background: rgba(255, 255, 255, 0.05);
+    transition: all 0.3s ease;
+}
     </style>
 </head>
 <body>
@@ -77,10 +99,30 @@
                 <a href="#catalog" class="hover:text-red-500 transition">Каталог</a>
                 <a href="#about" class="hover:text-red-500 transition">Про нас</a>
                 <a href="tel:0959002185" class="text-black border-b-2 border-red-500 pb-1">095 900 21 85</a>
+                <a href="tel:+380 99 734 60 15" class="text-black border-b-2 border-red-500 pb-2">099 734 60 15</a>
             </nav>
         </div>
     </header>
-
+<div class="py-12 bg-white border-y border-gray-100 overflow-hidden">
+    <div class="container mx-auto px-4 text-center">
+        <p class="text-gray-400 text-[10px] uppercase font-bold tracking-[0.3em] mb-10">Індивідуальний пошив для будь-якої марки авто</p>
+        
+        <div class="flex flex-wrap justify-center items-center gap-x-8 md:gap-x-16 gap-y-10 opacity-70 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-700 px-4">
+            
+            <img src="https://cdn.simpleicons.org/bmw/000000" class="h-7 md:h-9 w-auto" alt="BMW">
+            <img src="https://www.svgrepo.com/show/446903/mercedes-benz.svg" class="h-7 md:h-9 w-auto" alt="Mercedes">
+            <img src="https://cdn.simpleicons.org/audi/000000" class="h-7 md:h-9 w-auto" alt="Audi">
+            <img src="https://www.svgrepo.com/show/446884/lexus.svg" class="h-7 md:h-9 w-auto" alt="Lexus">
+            <img src="https://cdn.simpleicons.org/toyota/000000" class="h-7 md:h-9 w-auto" alt="Toyota">
+            <img src="https://cdn.simpleicons.org/honda/000000" class="h-7 md:h-9 w-auto" alt="Honda">
+            <img src="https://cdn.simpleicons.org/nissan/000000" class="h-7 md:h-9 w-auto" alt="Nissan">
+            <img src="https://cdn.simpleicons.org/mitsubishi/000000" class="h-7 md:h-9 w-auto" alt="Mitsubishi">
+            <img src="https://cdn.simpleicons.org/kia/000000" class="h-7 md:h-9 w-auto" alt="Kia">
+            <img src="https://cdn.simpleicons.org/volkswagen/000000" class="h-7 md:h-9 w-auto" alt="VW">
+            <img src="https://cdn.simpleicons.org/tesla/000000" class="h-7 md:h-9 w-auto" alt="Tesla">
+        </div>
+    </div>
+</div>>
     <a href="tel:0959002185" class="fab">
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
     </a>
@@ -145,37 +187,82 @@
             </div>
         </div>
     </section>
+<span class="text-red-500 font-black uppercase tracking-[0.5em] text-[11px] mb-8 block text-center lg:text-left">Навіщо ми це робимо?</span>
+<h2 class="unbounded text-4xl md:text-6xl font-black leading-tight mb-8 uppercase text-center lg:text-left">МИ — ЦЕ <span class="text-red-500 italic">REVUP.</span></h2>
+<p class="text-gray-400 text-lg md:text-xl font-light mb-12 text-center lg:text-left leading-relaxed">Ми не просто продаємо деталі. Ми створюємо умови для вашої переваги на дорозі. Кожен продукт RevUp — це поєднання технологій та стилю.</p>
 
-    <section id="about" class="py-24 md:py-40 bg-black text-white relative overflow-hidden">
-        <div class="max-w-[1440px] mx-auto px-6 md:px-10 grid grid-cols-1 lg:grid-cols-2 gap-16 md:gap-20 items-center">
-            <div class="relative">
-                <img src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?q=80&w=2070" class="rounded-[30px] md:rounded-[40px] h-[400px] md:h-[500px] w-full object-cover grayscale hover:grayscale-0 transition duration-1000">
-                <div class="absolute -bottom-6 -right-6 bg-red-500 p-8 rounded-[30px] hidden md:block">
-                    <div class="unbounded text-4xl font-black">100%</div>
-                    <div class="text-[9px] uppercase font-bold tracking-widest opacity-80">Quality Control</div>
-                </div>
-            </div>
-            <div>
-                <span class="text-red-500 font-black uppercase tracking-[0.5em] text-[11px] mb-8 block text-center lg:text-left">Навіщо ми це робимо?</span>
-                <h2 class="unbounded text-4xl md:text-6xl font-black leading-tight mb-8 uppercase text-center lg:text-left">МИ — ЦЕ <span class="text-red-500 italic">REVUP.</span></h2>
-                <p class="text-gray-400 text-lg md:text-xl font-light mb-12 text-center lg:text-left leading-relaxed">Ми не просто продаємо деталі. Ми створюємо умови для вашої переваги на дорозі. Кожен продукт RevUp — це поєднання технологій та стилю.</p>
-                
-                <div class="p-6 md:p-8 bg-white/5 rounded-[30px] border border-white/10 flex flex-col sm:row justify-between items-center gap-6">
-                    <div class="text-center sm:text-left">
-                        <div class="text-gray-500 text-[9px] uppercase font-bold mb-1 tracking-widest">Контактний центр:</div>
-                        <a href="tel:0959002185" class="unbounded text-xl md:text-2xl font-black hover:text-red-500 transition">095 900 21 85</a>
-                    </div>
-                    <a href="tel:0959002185" class="btn-volume !bg-red-500 w-full sm:w-auto !py-4">Замовити дзвінок</a>
-                </div>
+<div class="p-8 bg-white/5 rounded-[40px] border border-white/10">
+    <div class="flex flex-col md:flex-row justify-between items-center gap-12">
+        
+        <div class="text-center md:text-left w-full md:w-1/2">
+            <div class="text-gray-500 text-[10px] uppercase font-bold mb-3 tracking-[0.2em]">Відділ продажу:</div>
+            <a href="tel:0959002185" class="unbounded text-2xl md:text-3xl font-black hover:text-red-500 transition block mb-6">095 900 21 85</a>
+            <div class="flex gap-4 justify-center md:justify-start">
+                <a href="https://t.me/+380959002185" target="_blank" class="flex items-center gap-2 px-4 py-2 bg-sky-500/10 hover:bg-sky-500/20 text-sky-400 rounded-xl transition border border-sky-500/20 text-xs font-bold uppercase tracking-wider">
+                    <img src="https://cdn.simpleicons.org/telegram/38BDF8" class="w-4 h-4" alt="TG"> Telegram
+                </a>
+                <a href="viber://chat?number=%2B380959002185" class="flex items-center gap-2 px-4 py-2 bg-violet-500/10 hover:bg-violet-500/20 text-violet-400 rounded-xl transition border border-violet-500/20 text-xs font-bold uppercase tracking-wider">
+                    <img src="https://cdn.simpleicons.org/viber/A78BFA" class="w-4 h-4" alt="VB"> Viber
+                </a>
             </div>
         </div>
-    </section>
 
+        <div class="text-center md:text-left w-full md:w-1/2 border-t md:border-t-0 md:border-l border-white/10 pt-8 md:pt-0 md:pl-12">
+            <div class="text-gray-500 text-[10px] uppercase font-bold mb-3 tracking-[0.2em]">Технічна підтримка:</div>
+            <a href="tel:0997346015" class="unbounded text-2xl md:text-3xl font-black hover:text-red-500 transition block mb-6">099 734 60 15</a>
+            <div class="flex gap-4 justify-center md:justify-start">
+                <a href="https://t.me/+380997346015" target="_blank" class="flex items-center gap-2 px-4 py-2 bg-sky-500/10 hover:bg-sky-500/20 text-sky-400 rounded-xl transition border border-sky-500/20 text-xs font-bold uppercase tracking-wider">
+                    <img src="https://cdn.simpleicons.org/telegram/38BDF8" class="w-4 h-4" alt="TG"> Telegram
+                </a>
+                <a href="viber://chat?number=%2B380997346015" class="flex items-center gap-2 px-4 py-2 bg-violet-500/10 hover:bg-violet-500/20 text-violet-400 rounded-xl transition border border-violet-500/20 text-xs font-bold uppercase tracking-wider">
+                    <img src="https://cdn.simpleicons.org/viber/A78BFA" class="w-4 h-4" alt="VB"> Viber
+                </a>
+            </div>
+        </div>
+        
+    </div>
+</div>
+    </section>
+<section class="py-16 bg-white border-t border-gray-100">
+    <div class="container mx-auto px-4 text-center">
+        <h3 class="unbounded text-2xl font-bold mb-4 uppercase tracking-tighter">Або замовте через месенджер</h3>
+        <p class="text-gray-500 mb-8">Ми проконсультуємо та допоможемо обрати правильний товар</p>
+        
+        <div class="flex flex-wrap justify-center gap-4">
+            <a href="https://t.me/+380961726051" target="_blank" class="hover:opacity-80 transition">
+                <img src="https://img.shields.io/badge/Telegram-2CA5E0?style=for-the-badge&logo=telegram&logoColor=white" class="h-12 rounded-xl" alt="Telegram">
+            </a>
+
+            <a href="viber://chat?number=%2B380961726051" target="_blank" class="hover:opacity-80 transition">
+                <img src="https://img.shields.io/badge/Viber-7360F2?style=for-the-badge&logo=viber&logoColor=white" class="h-12 rounded-xl" alt="Viber">
+            </a>
+        </div>
+    </div>
+</section>
     <footer class="py-16 text-center border-t border-gray-50">
         <div class="unbounded text-2xl font-black mb-4 uppercase">Rev<span class="text-red-500">Up</span></div>
         <p class="text-gray-400 text-[9px] uppercase tracking-[0.5em] mb-6 italic">Precision & Style</p>
         <div class="text-gray-300 text-[8px] font-bold uppercase tracking-widest">© 2026 REVUP PERFORMANCE — Всі права захищені</div>
     </footer>
+<div class="fixed bottom-24 left-6 z-50 flex items-center gap-3 bg-black/80 backdrop-blur-md p-3 rounded-2xl border border-white/10 shadow-2xl animate-bounce-slow">
+    <div class="relative">
+        <img src="https://ui-avatars.com/api/?name=Rev+Up&background=ef4444&color=fff" class="w-10 h-10 rounded-full border-2 border-red-500" alt="Admin">
+        <div class="absolute bottom-0 right-0 w-3 h-3 bg-green-500 rounded-full border-2 border-black animate-pulse"></div>
+    </div>
+    <div class="flex flex-col">
+        <span class="text-[10px] text-gray-400 uppercase font-bold tracking-wider">Менеджери онлайн</span>
+        <span class="text-white text-sm font-medium"> Олег/Назар (RevUp)</span>
+    </div>
+</div>
 
+<style>
+@keyframes bounce-slow {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+.animate-bounce-slow {
+  animation: bounce-slow 3s ease-in-out infinite;
+}
+</style>
 </body>
 </html>
