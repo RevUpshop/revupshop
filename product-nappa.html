@@ -70,13 +70,12 @@
 
                 <div class="bg-white p-12 rounded-[50px] shadow-2xl border border-gray-50">
                     <h3 class="unbounded text-lg font-bold mb-8 uppercase tracking-tighter">Швидке замовлення</h3>
-                    <form action="https://api.web3forms.com/submit" method="POST" class="space-y-6">
-                        <input type="hidden" name="access_key" value="6fb49301-bc8d-4639-84c1-d5093c667dda">
-                        <input type="hidden" name="subject" value="Нове замовлення: Брелок Nappa">
-                        
-                        <input type="text" name="name" placeholder="Ваше ім'я" required 
-                               class="w-full p-6 bg-gray-50 rounded-2xl outline-none focus:ring-2 focus:ring-red-500 transition font-bold">   
-                       <input type="tel" name="phone" placeholder="+38 (0__) --_" required>
+                    <form action="https://api.web3forms.com/submit" method="POST">
+                    <input type="hidden" name="access_key" value="6fb49301-bc8d-4639-84c1-d5093c667dda">
+                    <input type="hidden" name="subject" value="Нове замовлення: Брелок Nappa"
+                    <input type="text" name="name" placeholder="Ваше ім'я" required> 
+                    class="w-full p-6 bg-gray-50 rounded-2xl outline-none focus:ring-2 focus:ring-red-500 transition font-bold">   
+                    <input type="tel" name="phone" placeholder="+38 (0__) --_" required>
                         <button type="submit" class="btn-order">Підтвердити замовлення</button>
                     </form>
                     <p class="text-center text-[10px] text-gray-300 mt-6 uppercase tracking-widest font-bold">
