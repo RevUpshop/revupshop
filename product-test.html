@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Брелок Nappa | RevUp Premium</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;500;800&family=Unbounded:wght@400;900&display=swap" rel="stylesheet">
+    <style>
+        :root { --red: #ff3b30; --dark: #0a0a0a; }
+        body { font-family: 'Manrope', sans-serif; background: #fff; color: var(--dark); }
+        .unbounded { font-family: 'Unbounded', sans-serif; }
+        
+        .product-image-box {
+            border-radius: 60px;
+            box-shadow: 30px 30px 80px #e6e6e6, -20px -20px 60px #ffffff;
+            overflow: hidden;
+            border: 1px solid rgba(0,0,0,0.03);
+        }
+
+        .btn-order {
+            background: var(--red);
+            color: #fff;
+            border-radius: 24px;
+            padding: 25px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 20px 40px rgba(255, 59, 48, 0.3);
+            width: 100%;
+            text-align: center;
+            display: block;
+        }
+        .btn-order:hover { transform: translateY(-5px); box-shadow: 0 30px 60px rgba(255, 59, 48, 0.4); }
+    </style>
+</head>
+<body class="bg-[#fcfcfc]">
+
+    <header class="p-10 flex justify-between items-center">
+        <a href="index.html" class="unbounded text-xs font-black uppercase tracking-widest text-gray-400 hover:text-black transition">
+            ← Назад до каталогу
+        </a>
+        <img src="logo.png" alt="Logo" class="h-10 w-auto">
+    </header>
+
+    <main class="max-w-[1440px] mx-auto px-10 py-20">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-24 items-start">
+            
+            <div class="product-image-box group">
+                <img src="test.jpg" 
+                     class="w-full h-auto object-cover transition-transform duration-1000 group-hover:scale-105" 
+                     alt="Коврики автомобільні">
+            </div>
+
+            <div class="pt-10">
+                <div class="inline-block py-1 px-4 bg-red-50 text-red-500 rounded-full text-[10px] font-black uppercase tracking-widest mb-6">
+                    В наявності • RevUp Original
+                </div>
+                
+                <h1 class="unbounded text-5xl md:text-7xl font-black mb-8 leading-tight">
+                    Коврики автомобільні <br><span class="text-red-500 italic">NAPPA LEATHER.</span>
+                </h1>
+
+                <div class="text-4xl font-black mb-12">2890₴</div>
+
+                <p class="text-gray-400 text-xl leading-relaxed mb-12 border-l-4 border-red-500 pl-8 font-medium">
+                    Ексклюзивний аксесуар з якісного ковроліну. Ручна прошивка вощеною ниткою та надійна фурнітура з матового титану. Додає вашому авто комфортності та стилю.
+                </p>
+
+                <div class="bg-white p-12 rounded-[50px] shadow-2xl border border-gray-50">
+                    <h3 class="unbounded text-lg font-bold mb-8 uppercase tracking-tighter">Швидке замовлення</h3>
+                    <form action="https://api.web3forms.com/submit" method="POST" class="space-y-6">
+                        <input type="hidden" name="access_key" value="6fb49301-bc8d-4639-84c1-d5093c667dda">
+                        <input type="hidden" name="subject" value="Нове замовлення: Коврики автомобільні">
+                        
+                        <input type="text" name="name" placeholder="Ваше ім'я" required 
+                               class="w-full p-6 bg-gray-50 rounded-2xl outline-none focus:ring-2 focus:ring-red-500 transition font-bold">
+                                <input type="tel" name="phone" placeholder="+38 (0__) --_" required>
+                        <button type="submit" class="btn-order">Підтвердити замовлення</button>
+                    </form>
+                    <p class="text-center text-[10px] text-gray-300 mt-6 uppercase tracking-widest font-bold">
+                        Ми зателефонуємо вам для уточнення доставки
+                    </p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="py-20 text-center text-gray-200 text-[10px] font-bold uppercase tracking-[0.8em]">
+        © 2026 REVUP PERFORMANCE
+    </footer>
+
+</body>
+</html>

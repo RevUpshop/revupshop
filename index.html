@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RevUp | Premium Auto & Moto Accessories</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;500;800&family=Unbounded:wght@400;900&display=swap" rel="stylesheet">
+    <style>
+        :root { --red: #ff3b30; --dark: #0a0a0a; }
+        body { font-family: 'Manrope', sans-serif; background: #ffffff; color: var(--dark); overflow-x: hidden; scroll-behavior: smooth; }
+        .unbounded { font-family: 'Unbounded', sans-serif; }
+
+        .glass-header { 
+            background: rgba(255, 255, 255, 0.8); 
+            backdrop-filter: blur(25px) saturate(150%); 
+            border-bottom: 1px solid rgba(0,0,0,0.05); 
+        }
+
+        .btn-volume {
+            background: var(--dark);
+            color: #fff;
+            border-radius: 20px;
+            padding: 22px 45px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+            display: inline-block;
+        }
+        .btn-volume:hover { 
+            transform: translateY(-7px) scale(1.02); 
+            background: var(--red);
+            box-shadow: 0 25px 50px rgba(255, 59, 48, 0.3);
+        }
+
+        .fab {
+            position: fixed; right: 35px; bottom: 35px; z-index: 999;
+            width: 70px; height: 70px; background: var(--red); border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            box-shadow: 0 15px 35px rgba(255, 59, 48, 0.4); animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(255, 59, 48, 0.7); }
+            70% { box-shadow: 0 0 0 20px rgba(255, 59, 48, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(255, 59, 48, 0); }
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+        .animate-float { animation: float 6s ease-in-out infinite; }
+
+        .reveal { opacity: 0; transform: translateY(30px); animation: fadeInUp 1s forwards; }
+        @keyframes fadeInUp { to { opacity: 1; transform: translateY(0); } }
+
+        .product-mini-card { transition: 0.4s cubic-bezier(0.23, 1, 0.32, 1); }
+        ::selection { background: #ff3b30; color: white; }
+    </style>
+</head>
+<body>
+
+    <header class="fixed top-0 w-full z-50 glass-header">
+        <div class="max-w-[1440px] mx-auto px-10 h-24 flex justify-between items-center">
+            <div class="flex items-center gap-4">
+                <img src="logo.png" alt="RevUp" class="h-12 w-auto object-contain">
+                <span class="unbounded text-2xl font-black tracking-tighter uppercase">Rev<span class="text-red-500 italic">Up</span></span>
+            </div>
+            <nav class="hidden lg:flex gap-12 text-[11px] font-black uppercase tracking-[0.3em] text-gray-400 items-center">
+                <a href="#catalog" class="hover:text-black transition">Каталог</a>
+                <a href="#about" class="hover:text-black transition">Про нас</a>
+                <a href="tel:0959002185" class="text-black font-bold border-b border-red-500">095 900 21 85</a>
+            </nav>
+        </div>
+    </header>
+
+    <a href="tel:0959002185" class="fab">
+        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+    </a>
+
+    <section class="min-h-screen flex items-center pt-32 px-10 relative overflow-hidden">
+        <div class="absolute top-20 right-0 w-[600px] h-[600px] bg-red-500/5 blur-[120px] rounded-full"></div>
+        <div class="max-w-[1440px] mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-20 items-center relative z-10">
+            <div class="reveal">
+                <span class="text-red-500 font-black uppercase tracking-[0.5em] text-[11px] mb-8 block">New Collection 2026</span>
+                <h1 class="unbounded text-7xl md:text-[110px] font-black leading-[0.85] mb-12 uppercase">DRIVE <br><span class="text-red-500 italic">PURE.</span></h1>
+                <p class="text-gray-400 text-xl max-w-lg mb-14 leading-relaxed font-medium border-l-4 border-red-500 pl-8">Преміальні аксесуари, що перетворюють кожну поїздку на винятковий досвід.</p>
+                <div class="flex items-center gap-10">
+                    <a href="#catalog" class="btn-volume">До колекції</a>
+                    <a href="tel:0959002185" class="text-[10px] font-black uppercase tracking-[0.3em] hover:text-red-500 transition">Консультація →</a>
+                </div>
+            </div>
+            <div class="flex justify-center relative">
+                <div class="absolute inset-0 bg-red-500/10 rounded-full blur-[100px] animate-pulse"></div>
+                <img src="logo.png" class="relative z-10 w-full max-w-[550px] animate-float drop-shadow-2xl" alt="RevUp Elite">
+            </div>
+        </div>
+    </section>
+
+    <section id="catalog" class="py-20 px-6 max-w-[1440px] mx-auto">
+        <div class="mb-16 flex justify-between items-end border-b border-gray-100 pb-8">
+            <div>
+                <h2 class="unbounded text-4xl font-black italic tracking-tighter uppercase">Колекція <span class="text-red-500">2026</span></h2>
+                <p class="text-gray-400 text-xs font-bold uppercase tracking-widest mt-2">Преміальні аксесуари для вашого авто</p>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div class="product-mini-card group">
+                <div class="relative rounded-[35px] overflow-hidden aspect-square bg-[#fcfcfc] border border-gray-50 shadow-sm">
+                    <img src="https://images.unsplash.com/photo-1614165939092-45194451648d?q=80&w=1974" class="w-full h-full object-cover transition duration-700 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300">
+                        <a href="product-nappa.html" class="bg-white text-black px-6 py-3 rounded-xl font-black uppercase text-[9px] tracking-widest hover:bg-red-500 hover:text-white transition">Переглянути</a>
+                    </div>
+                </div>
+                <div class="mt-6 px-2">
+                    <h3 class="unbounded text-sm font-bold uppercase">Брелок <span class="text-red-500">Nappa</span></h3>
+                    <div class="flex justify-between items-center mt-3">
+                        <span class="unbounded text-lg font-black italic">890 ₴</span>
+                        <a href="product-nappa.html" class="text-[9px] font-black uppercase text-red-500 border-b border-red-500">Купити</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-mini-card group">
+                <div class="relative rounded-[35px] overflow-hidden aspect-square bg-[#fcfcfc] border border-gray-50 shadow-sm">
+                    <img src="test.jpg" class="w-full h-full object-cover transition duration-700 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300">
+                        <a href="product-test.html" class="bg-white text-black px-6 py-3 rounded-xl font-black uppercase text-[9px] tracking-widest hover:bg-red-500 hover:text-white transition">Переглянути</a>
+                    </div>
+                </div>
+                <div class="mt-6 px-2">
+                    <h3 class="unbounded text-sm font-bold uppercase">Килимки <span class="text-red-500">Nappa</span></h3>
+                    <div class="flex justify-between items-center mt-3">
+                        <span class="unbounded text-lg font-black italic">2 890 ₴</span>
+                        <a href="product-test.html" class="text-[9px] font-black uppercase text-red-500 border-b border-red-500">Купити</a>
+                    </div>                
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="py-40 bg-black text-white relative overflow-hidden">
+        <div class="max-w-[1440px] mx-auto px-10 grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+            <div class="relative">
+                <img src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?q=80&w=2070" class="rounded-[40px] h-[500px] w-full object-cover grayscale hover:grayscale-0 transition duration-1000">
+            </div>
+            <div>
+                <span class="text-red-500 font-black uppercase tracking-[0.6em] text-[12px] mb-10 block">Навіщо ми це робимо?</span>
+                <h2 class="unbounded text-6xl font-black leading-tight mb-12 uppercase">МИ — ЦЕ <span class="text-red-500 italic">REVUP.</span></h2>
+                <p class="text-gray-400 text-xl font-light mb-16">Ми створюємо умови для вашої переваги на дорозі. Кожен продукт RevUp має бути ідеальним.</p>
+                
+                <div class="grid grid-cols-2 gap-10 mb-16 text-center md:text-left">
+                    <div class="border-t border-white/10 pt-8">
+                        <div class="unbounded text-4xl font-black">100%</div>
+                        <div class="text-gray-500 text-[9px] uppercase font-bold tracking-widest">Quality</div>
+                    </div>
+                    <div class="border-t border-white/10 pt-8">
+                        <div class="unbounded text-4xl font-black">24/7</div>
+                        <div class="text-gray-500 text-[9px] uppercase font-bold tracking-widest">Support</div>
+                    </div>
+                </div>
+
+                <div class="p-8 bg-white/5 rounded-[30px] border border-white/10 flex flex-col md:flex-row justify-between items-center gap-6">
+                    <div class="text-center md:text-left">
+                        <div class="text-gray-500 text-[9px] uppercase font-bold mb-1">Зателефонуйте нам:</div>
+                        <a href="tel:0959002185" class="unbounded text-2xl font-black hover:text-red-500 transition">095 900 21 85</a>
+                    </div>
+                    <a href="tel:0959002185" class="btn-volume !py-4 !px-8">Дзвінок</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-20 text-center border-t border-gray-50">
+        <div class="unbounded text-2xl font-black mb-4 uppercase">Rev<span class="text-red-500">Up</span></div>
+        <p class="text-black-400 text-[10px] uppercase tracking-[0.5em] mb-4 italic">Precision & Style</p>
+        <div class="black-200 text-[9px] font-bold uppercase tracking-widest">© 2026 REVUP PERFORMANCE</div>
+    </footer>
+</body>
+</html>
