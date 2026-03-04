@@ -134,6 +134,99 @@
     50% { opacity: 0.5; transform: scale(1.2); }
     100% { opacity: 1; transform: scale(1); }
 }
+/* Основна кнопка виклику */
+.call-fab {
+    position: fixed;
+    right: 25px;
+    bottom: 25px;
+    z-index: 1000;
+    width: 65px;
+    height: 65px;
+    background: #ff554d; /* Колір як на скриншоті */
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 10px 30px rgba(255, 85, 77, 0.4);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    animation: fab-swing 3s ease-in-out infinite;
+}
+
+/* Ефект пульсуючих хвиль навколо */
+.call-fab::before, .call-fab::after {
+    content: '';
+    position: absolute;
+    border: 1px solid #ff554d;
+    left: -10px;
+    right: -10px;
+    top: -10px;
+    bottom: -10px;
+    border-radius: 50%;
+    animation: fab-pulse 2s linear infinite;
+    opacity: 0;
+}
+
+.call-fab::after {
+    animation-delay: 1s;
+}
+
+/* Анімація розширення хвиль */
+@keyframes fab-pulse {
+    0% { transform: scale(0.6); opacity: 0; }
+    50% { opacity: 0.5; }
+    100% { transform: scale(1.4); opacity: 0; }
+}
+
+/* Анімація легкого погойдування */
+@keyframes fab-swing {
+    0%, 100% { transform: rotate(0deg) scale(1); }
+    25% { transform: rotate(-10deg) scale(1.05); }
+    75% { transform: rotate(10deg) scale(1.05); }
+}
+
+/* Ефект при наведенні */
+.call-fab:hover {
+    background: #ff3b30;
+    transform: scale(1.1) translateY(-5px);
+    box-shadow: 0 15px 40px rgba(255, 59, 48, 0.6);
+}
+
+.call-icon {
+    width: 30px;
+    height: 30px;
+    fill: white;
+}
+/* Ефект розмиття як в iOS */
+.glass-apple {
+    backdrop-filter: saturate(180%) blur(20px);
+    -webkit-backdrop-filter: saturate(180%) blur(20px);
+    background: rgba(0, 0, 0, 0.7);
+}
+
+/* Анімація "дихання" логотипу */
+@keyframes apple-float {
+    0%, 100% { transform: translateY(0) scale(1); filter: brightness(1); }
+    50% { transform: translateY(-10px) scale(1.02); filter: brightness(1.2); }
+}
+.revup-main-logo { animation: apple-float 5s ease-in-out infinite; }
+
+/* Твоя червона кнопка з посиленою анімацією */
+.call-btn-pro {
+    position: fixed; right: 20px; bottom: 20px; z-index: 999;
+    width: 65px; height: 65px; background: #ff554d;
+    border-radius: 50%; display: flex; align-items: center; justify-content: center;
+    box-shadow: 0 10px 30px rgba(255, 85, 77, 0.5);
+}
+.pulse-wave {
+    position: absolute; width: 100%; height: 100%;
+    border: 2px solid #ff554d; border-radius: 50%;
+    animation: wave-expand 2s infinite;
+}
+@keyframes wave-expand {
+    0% { transform: scale(1); opacity: 0.8; }
+    100% { transform: scale(2); opacity: 0; }
+}
     </style>
 </head>
 <body>
@@ -311,6 +404,10 @@
             <span class="text-white text-sm font-medium"> Олег/Назар (RevUp)</span>
         </div>
     </div>
-
+<a href="tel:0959002185" class="call-fab" title="Зателефонувати нам">
+    <svg class="call-icon" viewBox="0 0 24 24">
+        <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+    </svg>
+</a>
 </body>
 </html>
