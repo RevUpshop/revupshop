@@ -306,6 +306,25 @@
             .chat-panel { width: calc(100vw - 50px); }
             .btn-revup { width: 100%; text-align: center; }
         }
+        * {
+    -webkit-tap-highlight-color: transparent;
+    -webkit-font-smoothing: antialiased;
+}
+
+html {
+    scroll-behavior: smooth;
+    /* Виправляє дьоргання при скролі на iOS */
+    -webkit-overflow-scrolling: touch; 
+}
+
+/* Оптимізація для важких елементів */
+.glass-card {
+    background: rgba(255, 255, 255, 0.05); /* Трохи щільніший колір */
+    -webkit-backdrop-filter: blur(8px);    /* Префікс спеціально для Safari */
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 50px;
+}
 
     </style>
 </head>
@@ -419,23 +438,24 @@
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-10 max-w-[1000px] mx-auto">
                 <div class="group">
                     <div class="relative bg-[#0c0c0c] rounded-[45px] overflow-hidden aspect-square border border-white/5 p-4 transition-all duration-500 group-hover:border-red-500/50">
-                        <img src="https://images.unsplash.com/photo-1614165939092-45194451648d?q=80&w=1974" class="w-full h-full object-cover rounded-[35px] grayscale group-hover:grayscale-0 transition-all duration-700">
+                        <img src="kartina.jpg" class="w-full h-full object-cover rounded-[35px] grayscale group-hover:grayscale-0 transition-all duration-700">
                         <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center backdrop-blur-sm">
                             <a href="product-nappa.html" class="btn-revup py-4 px-10">Детальніше</a>
                         </div>
                     </div>
                     <div class="mt-8 flex justify-between items-start px-4">
                         <div>
-                            <span class="text-[9px] font-black text-gray-600 uppercase tracking-widest block mb-2">Interior Luxe</span>
-                            <h4 class="unbounded text-base font-black uppercase">Keychain Nappa</h4>
+                            <span class="text-[9px] font-black text-gray-600 uppercase tracking-widest block mb-2">Картина</span>
+                            <h4 class="unbounded text-base font-black uppercase">Картина вашого авто/мотоциклу</h4>
                         </div>
-                        <div class="unbounded text-xl font-black italic text-red-500">890 ₴</div>
+                        <div class="unbounded text-xl font-black italic text-red-500">320₴</div>
                     </div>
                 </div>
 
                 <div class="group">
                     <div class="relative bg-[#0c0c0c] rounded-[45px] overflow-hidden aspect-square border border-white/5 p-4 transition-all duration-500 group-hover:border-red-500/50">
-                        <img src="test.jpg" onerror="this.src='https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?q=80&w=1983'" class="w-full h-full object-cover rounded-[35px] grayscale group-hover:grayscale-0 transition-all duration-700">
+                        <img src="nom.jpg" 
+                        onerror="this.src='https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?q=80&w=1983'" class="w-full h-full object-cover rounded-[35px] grayscale group-hover:grayscale-0 transition-all duration-700">
                         <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center backdrop-blur-sm">
                             <a href="product-test.html" class="btn-revup py-4 px-10">Детальніше</a>
                         </div>
@@ -443,10 +463,29 @@
                     <div class="mt-8 flex justify-between items-start px-4">
                         <div>
                             <span class="text-[9px] font-black text-gray-600 uppercase tracking-widest block mb-2">Performance</span>
-                            <h4 class="unbounded text-base font-black uppercase">Carbon Mats Set</h4>
+                            <h4 class="unbounded text-base font-black uppercase">Брилок</h4>
                         </div>
-                        <div class="unbounded text-xl font-black italic text-red-500">2 890 ₴</div>
+                        <div class="unbounded text-xl font-black italic text-red-500">54₴</div>
                     </div>
+                </div>
+                        <div class="group">
+                        <div class="relative bg-[#0c0c0c] rounded-[45px] overflow-hidden aspect-square border border-white/5 p-4 transition-all duration-500 group-hover:border-red-500/50">
+        <img src="salonl.jpg"
+        onerror="this.src='https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?q=80&w=1983'" class="w-full h-full object-cover rounded-[35px] grayscale group-hover:grayscale-0 transition-all duration-700">   
+        <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center backdrop-blur-sm">
+            <a href="salonl.html" class="btn-revup py-4 px-10">Детальніше</a>
+        </div>
+    </div>
+
+    <div class="mt-8 flex justify-between items-start px-4">
+        <div>
+            <span class="text-[9px] font-black text-gray-600 uppercase tracking-widest block mb-2">лампи</span>
+            <h4 class="unbounded text-base font-black uppercase">LED лампи</h4>
+        </div>
+        <div class="unbounded text-xl font-black italic text-red-500">50₴</div>
+    </div>
+</div>
+                </div>
                 </div>
             </div>
         </div>
@@ -462,12 +501,12 @@
                     <p class="text-gray-500 text-sm leading-relaxed">Ми відправляємо замовлення "Новою Поштою" по всій Україні в день оформлення. Кожен виріб пакується у бокс з нашою наклейкою RevUp.</p>
                 </div>
                 <div class="bg-white/5 rounded-3xl p-8 border border-white/5">
-                    <h4 class="unbounded text-sm font-black uppercase mb-4 text-white">Чи є гарантія на карбон?</h4>
-                    <p class="text-gray-500 text-sm leading-relaxed">Так,відповідаємо за наш твар, а саме структурну,цілісність та покриття виробів.</p>
+                    <h4 class="unbounded text-sm font-black uppercase mb-4 text-white">Чи є гарантія на товар</h4>
+                    <p class="text-gray-500 text-sm leading-relaxed">Так,відповідаємо за наш товар, а саме структурну,цілісність та покриття виробів.</p>
                 </div>
                 <div class="bg-white/5 rounded-3xl p-8 border border-white/5">
                     <h4 class="unbounded text-sm font-black uppercase mb-4 text-white">Можна замовити окремий товар за домовленістю?</h4>
-                    <p class="text-gray-500 text-sm leading-relaxed">Звісно. Наші менеджери допоможуть обрати товар, тип засобу,матервалу під ваш автомобіль.</p>
+                    <p class="text-gray-500 text-sm leading-relaxed">Звісно. Наші менеджери допоможуть обрати товар, тип засобу,матеріалу під ваш автомобіль.</p>
                 </div>
             </div>
         </div>
@@ -496,7 +535,7 @@
                     <h5 class="unbounded text-[10px] font-black uppercase tracking-widest text-white mb-8">Контакти</h5>
                     <ul class="space-y-4 text-gray-500 text-xs font-bold uppercase tracking-widest">
                         <li><a href="tel:0959002185" class="hover:text-white transition">095 900 21 85</a></li>
-                        <li><a href="tel:0997346015" class="hover:text-white transition">099 734 60 15</a></li>
+                        <li><a href="tel:0961726051" class="hover:text-white transition">096 172 60 51</a></li>
                         <li class="pt-4 text-red-500">revup0520@gmail.com</li>
                     </ul>
                 </div>
@@ -519,10 +558,10 @@
                 </div>
             </a>
 
-            <a href="https://t.me/+380997346015" target="_blank" class="mgr-row">
-                <div class="mgr-avatar" style="background: #333;">Н</div>
+            <a href="https://t.me/+380961726051" target="_blank" class="mgr-row">
+                <div class="mgr-avatar" style="background: #333;">S</div>
                 <div>
-                    <div class="text-sm font-black uppercase text-white">Назар</div>
+                    <div class="text-sm font-black uppercase text-white">Олег</div>
                     <div class="text-[9px] text-gray-300 font-medium uppercase tracking-widest">Продаж та наявність</div>
                 </div>
             </a>
