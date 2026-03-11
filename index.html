@@ -424,71 +424,148 @@ html {
             </div>
         </div>
     </section>
-
     <section id="catalog" class="py-24 md:py-40">
-        <div class="max-w-[1400px] mx-auto px-6">
-            <div class="flex flex-col md:flex-row justify-between items-end mb-20 border-b border-white/5 pb-12 gap-8">
-                <div>
-                    <span class="text-red-500 font-bold uppercase tracking-[0.5em] text-[10px] block mb-4">Stock list</span>
-                    <h2 class="unbounded text-4xl md:text-6xl font-black uppercase">Магазин <span class="text-white/20">2026</span></h2>
+    <div class="max-w-[1400px] mx-auto px-6">
+        <div class="flex flex-col md:flex-row justify-between items-end mb-20 border-b border-white/5 pb-12 gap-8">
+            <div>
+                <span class="text-red-500 font-bold uppercase tracking-[0.5em] text-[10px] block mb-4">Stock list</span>
+                <h2 class="unbounded text-4xl md:text-6xl font-black uppercase">Магазин <span class="text-white/20">2026</span></h2>
+            </div>
+            <p class="text-gray-500 text-sm max-w-xs font-medium">Колекція аксесуарів, продаж якісних виробів.</p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-10 gap-y-20 max-w-[1000px] mx-auto">
+            
+            <div class="group">
+                <div class="relative bg-[#0c0c0c] rounded-[45px] overflow-hidden aspect-square border border-white/5 p-4 transition-all duration-500 group-hover:border-red-500/50">
+                    <img src="kartina.jpg" class="w-full h-full object-cover rounded-[35px] grayscale group-hover:grayscale-0 transition-all duration-700">
+                    <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center backdrop-blur-sm">
+                        <a href="product-nappa.html" class="btn-revup py-4 px-10">Детальніше</a>
+                    </div>
                 </div>
-                <p class="text-gray-500 text-sm max-w-xs font-medium">Колекція аксесуарів,продаж якісних виробів.</p>
+                <div class="mt-8 flex justify-between items-start px-4">
+                    <div>
+                        <span class="text-[9px] font-black text-gray-600 uppercase tracking-widest block mb-2">Картина</span>
+                        <h4 class="unbounded text-base font-black uppercase">Картина вашого авто/мотоциклу</h4>
+                    </div>
+                    <div class="unbounded text-xl font-black italic text-red-500">269₴</div>
+                </div>
             </div>
 
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-10 max-w-[1000px] mx-auto">
-                <div class="group">
-                    <div class="relative bg-[#0c0c0c] rounded-[45px] overflow-hidden aspect-square border border-white/5 p-4 transition-all duration-500 group-hover:border-red-500/50">
-                        <img src="kartina.jpg" class="w-full h-full object-cover rounded-[35px] grayscale group-hover:grayscale-0 transition-all duration-700">
-                        <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center backdrop-blur-sm">
-                            <a href="product-nappa.html" class="btn-revup py-4 px-10">Детальніше</a>
-                        </div>
-                    </div>
-                    <div class="mt-8 flex justify-between items-start px-4">
-                        <div>
-                            <span class="text-[9px] font-black text-gray-600 uppercase tracking-widest block mb-2">Картина</span>
-                            <h4 class="unbounded text-base font-black uppercase">Картина вашого авто/мотоциклу</h4>
-                        </div>
-                        <div class="unbounded text-xl font-black italic text-red-500">320₴</div>
+            <div class="group">
+                <div class="relative bg-[#0c0c0c] rounded-[45px] overflow-hidden aspect-square border border-white/5 p-4 transition-all duration-500 group-hover:border-red-500/50">
+                    <img src="nom.jpg" onerror="this.src='https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?q=80&w=1983'" class="w-full h-full object-cover rounded-[35px] grayscale group-hover:grayscale-0 transition-all duration-700">
+                    <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center backdrop-blur-sm">
+                        <a href="product-test.html" class="btn-revup py-4 px-10">Детальніше</a>
                     </div>
                 </div>
-
-                <div class="group">
-                    <div class="relative bg-[#0c0c0c] rounded-[45px] overflow-hidden aspect-square border border-white/5 p-4 transition-all duration-500 group-hover:border-red-500/50">
-                        <img src="nom.jpg" 
-                        onerror="this.src='https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?q=80&w=1983'" class="w-full h-full object-cover rounded-[35px] grayscale group-hover:grayscale-0 transition-all duration-700">
-                        <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center backdrop-blur-sm">
-                            <a href="product-test.html" class="btn-revup py-4 px-10">Детальніше</a>
-                        </div>
+                <div class="mt-8 flex justify-between items-start px-4">
+                    <div>
+                        <span class="text-[9px] font-black text-gray-600 uppercase tracking-widest block mb-2">Performance</span>
+                        <h4 class="unbounded text-base font-black uppercase">Брелок</h4>
                     </div>
-                    <div class="mt-8 flex justify-between items-start px-4">
-                        <div>
-                            <span class="text-[9px] font-black text-gray-600 uppercase tracking-widest block mb-2">Performance</span>
-                            <h4 class="unbounded text-base font-black uppercase">Брелок</h4>
-                        </div>
-                        <div class="unbounded text-xl font-black italic text-red-500">32₴</div>
-                    </div>
-                </div>
-                        <div class="group">
-                        <div class="relative bg-[#0c0c0c] rounded-[45px] overflow-hidden aspect-square border border-white/5 p-4 transition-all duration-500 group-hover:border-red-500/50">
-        <img src="salonl.jpg"
-        onerror="this.src='https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?q=80&w=1983'" class="w-full h-full object-cover rounded-[35px] grayscale group-hover:grayscale-0 transition-all duration-700">   
-        <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center backdrop-blur-sm">
-            <a href="salonl.html" class="btn-revup py-4 px-10">Детальніше</a>
-        </div>
-    </div>
-
-    <div class="mt-8 flex justify-between items-start px-4">
-        <div>
-            <span class="text-[9px] font-black text-gray-600 uppercase tracking-widest block mb-2">лампи</span>
-            <h4 class="unbounded text-base font-black uppercase">LED лампи</h4>
-        </div>
-        <div class="unbounded text-xl font-black italic text-red-500">50₴</div>
-    </div>
-</div>
-                </div>
+                    <div class="unbounded text-xl font-black italic text-red-500">32₴</div>
                 </div>
             </div>
+
+            <div class="group">
+                <div class="relative bg-[#0c0c0c] rounded-[45px] overflow-hidden aspect-square border border-white/5 p-4 transition-all duration-500 group-hover:border-red-500/50">
+                    <img src="salonl.jpg" onerror="this.src='https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?q=80&w=1983'" class="w-full h-full object-cover rounded-[35px] grayscale group-hover:grayscale-0 transition-all duration-700">   
+                    <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center backdrop-blur-sm">
+                        <a href="salonl.html" class="btn-revup py-4 px-10">Детальніше</a>
+                    </div>
+                </div>
+                <div class="mt-8 flex justify-between items-start px-4">
+                    <div>
+                        <span class="text-[9px] font-black text-gray-600 uppercase tracking-widest block mb-2">Лампи</span>
+                        <h4 class="unbounded text-base font-black uppercase">LED лампи</h4>
+                    </div>
+                    <div class="unbounded text-xl font-black italic text-red-500">27₴</div>
+                </div>
+            </div>
+
+            <div class="group">
+                <div class="relative bg-[#0c0c0c] rounded-[45px] overflow-hidden aspect-square border border-white/5 p-4 transition-all duration-500 group-hover:border-red-500/50">
+                    <img src="kamin.jpg" onerror="this.src='https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?q=80&w=1983'" class="w-full h-full object-cover rounded-[35px] grayscale group-hover:grayscale-0 transition-all duration-700">   
+                    <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center backdrop-blur-sm">
+                        <a href="kamin.html" class="btn-revup py-4 px-10">Детальніше</a>
+                    </div>
+                </div>
+                <div class="mt-8 flex justify-between items-start px-4">
+                    <div>
+                        <span class="text-[9px] font-black text-gray-600 uppercase tracking-widest block mb-2">Helpix</span>
+                        <h4 class="unbounded text-base font-black uppercase">Засіб проти водного каменю</h4>
+                    </div>
+                    <div class="unbounded text-xl font-black italic text-red-500">178₴</div>
+                </div>
+            </div>
+
+            <div class="group">
+                <div class="relative bg-[#0c0c0c] rounded-[45px] overflow-hidden aspect-square border border-white/5 p-4 transition-all duration-500 group-hover:border-red-500/50">
+                    <img src="pids.jpg" onerror="this.src='https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?q=80&w=1983'" class="w-full h-full object-cover rounded-[35px] grayscale group-hover:grayscale-0 transition-all duration-700">   
+                    <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center backdrop-blur-sm">
+                        <a href="pids.html" class="btn-revup py-4 px-10">Детальніше</a>
+                    </div>
+                </div>
+                <div class="mt-8 flex justify-between items-start px-4">
+                    <div>
+                        <span class="text-[9px] font-black text-gray-600 uppercase tracking-widest block mb-2">тримач для телефону в авто (F3)</span>
+                        <h4 class="unbounded text-base font-black uppercase">Магнітний тримач для телефону </h4>
+                    </div>
+                    <div class="unbounded text-xl font-black italic text-red-500">97₴</div>
+                </div>
+            </div>
+
+            <div class="group">
+                <div class="relative bg-[#0c0c0c] rounded-[45px] overflow-hidden aspect-square border border-white/5 p-4 transition-all duration-500 group-hover:border-red-500/50">
+                    <img src="storka.jpg" onerror="this.src='https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?q=80&w=1983'" class="w-full h-full object-cover rounded-[35px] grayscale group-hover:grayscale-0 transition-all duration-700">   
+                    <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center backdrop-blur-sm">
+                        <a href="storka.html" class="btn-revup py-4 px-10">Детальніше</a>
+                    </div>
+                </div>
+                <div class="mt-8 flex justify-between items-start px-4">
+                    <div>
+                        <span class="text-[9px] font-black text-gray-600 uppercase tracking-widest block mb-2">шторка на лобове скло (130х60 см)</span>
+                        <h4 class="unbounded text-base font-black uppercase">Сонцезахисна шторка на лобове скло </h4>
+                    </div>
+                    <div class="unbounded text-xl font-black italic text-red-500">158₴</div>
+                </div>
+            </div>
+
+            <div class="group">
+                <div class="relative bg-[#0c0c0c] rounded-[45px] overflow-hidden aspect-square border border-white/5 p-4 transition-all duration-500 group-hover:border-red-500/50">
+                    <img src="polir.jpg" onerror="this.src='https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?q=80&w=1983'" class="w-full h-full object-cover rounded-[35px] grayscale group-hover:grayscale-0 transition-all duration-700">   
+                    <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center backdrop-blur-sm">
+                        <a href="polir.html" class="btn-revup py-4 px-10">Детальніше</a>
+                    </div>
+                </div>
+                <div class="mt-8 flex justify-between items-start px-4">
+                    <div>
+                        <span class="text-[9px] font-black text-gray-600 uppercase tracking-widest block mb-2">Блиск та захист</span>
+                        <h4 class="unbounded text-base font-black uppercase">Поліроль для салону (220 мл) </h4>
+                    </div>
+                    <div class="unbounded text-xl font-black italic text-red-500">86₴</div>
+                </div>
+            </div>
+
+            <div class="group">
+                <div class="relative bg-[#0c0c0c] rounded-[45px] overflow-hidden aspect-square border border-white/5 p-4 transition-all duration-500 group-hover:border-red-500/50">
+                    <img src="compres.jpg" onerror="this.src='https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?q=80&w=1983'" class="w-full h-full object-cover rounded-[35px] grayscale group-hover:grayscale-0 transition-all duration-700">   
+                    <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center backdrop-blur-sm">
+                        <a href="compres.html" class="btn-revup py-4 px-10">Детальніше</a>
+                    </div>
+                </div>
+                <div class="mt-8 flex justify-between items-start px-4">
+                    <div>
+                        <span class="text-[9px] font-black text-gray-600 uppercase tracking-widest block mb-2">Твій помічник у дорозі</span>
+                        <h4 class="unbounded text-base font-black uppercase">Автомобільний компресор (12V)  </h4>
+                    </div>
+                    <div class="unbounded text-xl font-black italic text-red-500">423₴</div>
+                </div>
+            </div>
+
         </div>
+    </div>
     </section>
 
     <section id="faq" class="py-24 md:py-40 bg-[#050505]">

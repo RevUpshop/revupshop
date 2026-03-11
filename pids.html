@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Магнітний тримач для телефону в авто (F3) | RevUp Premium</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;500;800&family=Unbounded:wght@400;900&display=swap" rel="stylesheet">
+    <style>
+        :root { --red: #ff3b30; --dark: #050505; }
+        body { 
+            font-family: 'Manrope', sans-serif; 
+            background-color: var(--dark); 
+            color: #fff; 
+            margin: 0;
+        }
+        .unbounded { font-family: 'Unbounded', sans-serif; }
+        
+        /* Скляна картка для форми */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 50px;
+        }
+
+        /* Стильна кнопка */
+        .btn-order {
+            background: var(--red);
+            color: #fff;
+            border-radius: 20px;
+            padding: 22px;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            transition: all 0.4s ease;
+            box-shadow: 0 15px 30px rgba(255, 59, 48, 0.2);
+            width: 100%;
+            text-align: center;
+            border: none;
+            cursor: pointer;
+        }
+        .btn-order:hover { 
+            transform: scale(1.02); 
+            box-shadow: 0 20px 40px rgba(255, 59, 48, 0.4); 
+            background: #ff453a;
+        }
+
+        /* Поля вводу */
+        .input-field {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: white;
+            padding: 20px;
+            border-radius: 18px;
+            width: 100%;
+            outline: none;
+            transition: all 0.3s;
+        }
+        .input-field:focus {
+            border-color: var(--red);
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        .product-image-container {
+            border-radius: 50px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+    </style>
+</head>
+<body>
+
+    <header class="p-8 md:p-12 flex justify-between items-center max-w-[1440px] mx-auto">
+        <a href="index.html" class="unbounded text-[10px] font-black uppercase tracking-[0.3em] text-gray-500 hover:text-red-500 transition-colors">
+            ← Back to Shop
+        </a>
+        <div class="unbounded text-xl font-black italic tracking-tighter">REV<span class="text-red-500">UP</span></div>
+    </header>
+
+    <main class="max-w-[1400px] mx-auto px-6 md:px-12 py-10">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 md:gap-24 items-center">
+            
+            <div class="product-image-container group shadow-2xl">
+                <img src="pids.jpg" 
+                     onerror="this.src='https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?q=80&w=1983'" 
+                     class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" 
+                     alt="Магнітний тримач для телефону в авто (F3)">
+            </div>
+
+            <div>
+                <span class="text-red-500 font-bold uppercase tracking-[0.4em] text-[10px] block mb-6">Performance Lab 2026</span>
+                
+                <h1 class="unbounded text-4xl md:text-6xl font-black uppercase mb-6 leading-tight">
+                    Магнітний тримач <span class="text-white/30">для телефону</span> <br>в авто (F3)
+                </h1>
+
+                <div class="unbounded text-3xl font-black italic text-red-500 mb-10">97₴</div>
+
+                <p class="text-gray-400 text-lg leading-relaxed mb-12 max-w-xl font-medium">
+                    Надійний і компактний тримач, який не займає місця і міцно тримає смартфон навіть на поганих дорогах. Більше ніяких громіздких крабів на лобовому склі! <br><br>
+                    <span class="text-white">●</span> Потужний магніт: Телефон не сповзає і не падає при різких поворотах чи ямах <br>
+                    <span class="text-white">●</span> Компактний дизайн: Має вигляд невеликого гачка, що акуратно вписується в інтер’єр будь-якого авто <br>
+                    <span class="text-white">●</span> Просте кріплення: Легко встановлюється на панель або дефлектор (залежно від моделі) <br> 
+                    <span class="text-white">●</span> Повний комплект: У наборі йдуть металеві пластини, які наклеюються на телефон або ховаються під чохол  
+                </p>
+                <p class="text-gray-400 text-lg leading-relaxed mb-12 max-w-xl font-medium"></p>
+                Головний плюс: Телефон можна зняти або почепити однією рукою за секунду. Ідеально для використання навігатора в дорозі.
+                 </p>
+                <div class="glass-card p-8 md:p-12">
+                    <h3 class="unbounded text-sm font-bold mb-8 uppercase tracking-widest text-white/50">Оформити замовлення</h3>
+                    <form action="https://api.web3forms.com/submit" method="POST" class="space-y-4">
+                        <input type="hidden" name="access_key" value="6fb49301-bc8d-4639-84c1-d5093c667dda">
+                        <input type="hidden" name="subject" value="Нове замовлення: Магнітний тримач для телефону в авто (F3)">
+                        
+                        <input type="text" name="name" placeholder="Ваше ім'я" required class="input-field font-bold">
+                        <input type="tel" name="phone" placeholder="+38 (0__) --- -- --" required class="input-field font-bold">
+                        
+                        <button type="submit" class="btn-order unbounded text-sm">Замовити зараз</button>
+                    </form>
+                    <p class="text-center text-[9px] text-gray-500 mt-6 uppercase tracking-[0.2em] font-bold">
+                        Менеджер зв'яжеться для уточнення моделі авто
+                    </p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="py-20 text-center text-gray-800 text-[10px] font-black uppercase tracking-[1em]">
+        © 2026 REVUP PERFORMANCE • No Compromises
+    </footer>
+
+</body>
+</html>
