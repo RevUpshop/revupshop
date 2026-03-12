@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Сонцезахисна шторка на лобове скло (130х60 см)  | RevUp Premium</title>
+    <title>Сонцезахисна шторка (130х60 см) | RevUp Premium</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;500;800&family=Unbounded:wght@400;900&display=swap" rel="stylesheet">
     <style>
@@ -16,7 +16,6 @@
         }
         .unbounded { font-family: 'Unbounded', sans-serif; }
         
-        /* Скляна картка для форми */
         .glass-card {
             background: rgba(255, 255, 255, 0.03);
             backdrop-filter: blur(15px);
@@ -24,7 +23,6 @@
             border-radius: 50px;
         }
 
-        /* Стильна кнопка */
         .btn-order {
             background: var(--red);
             color: #fff;
@@ -46,7 +44,6 @@
             background: #ff453a;
         }
 
-        /* Поля вводу */
         .input-field {
             background: rgba(255, 255, 255, 0.05);
             border: 1px solid rgba(255, 255, 255, 0.1);
@@ -67,13 +64,17 @@
             overflow: hidden;
             border: 1px solid rgba(255, 255, 255, 0.1);
         }
+        select.input-field option {
+            background: #1a1a1a;
+            color: white;
+        }
     </style>
 </head>
 <body>
 
     <header class="p-8 md:p-12 flex justify-between items-center max-w-[1440px] mx-auto">
         <a href="index.html" class="unbounded text-[10px] font-black uppercase tracking-[0.3em] text-gray-500 hover:text-red-500 transition-colors">
-            ← Back to Shop
+            ← Назад до магазину
         </a>
         <div class="unbounded text-xl font-black italic tracking-tighter">REV<span class="text-red-500">UP</span></div>
     </header>
@@ -85,43 +86,76 @@
                 <img src="storka.jpg" 
                      onerror="this.src='https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?q=80&w=1983'" 
                      class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" 
-                     alt="Сонцезахисна шторка на лобове скло (130х60 см)">
+                     alt="Сонцезахисна шторка">
             </div>
 
             <div>
-                <span class="text-red-500 font-bold uppercase tracking-[0.4em] text-[10px] block mb-6">Performance Lab 2026</span>
+                <span class="text-red-500 font-bold uppercase tracking-[0.4em] text-[10px] block mb-6">Summer Essentials 2026</span>
                 
                 <h1 class="unbounded text-4xl md:text-6xl font-black uppercase mb-6 leading-tight">
-                    Сонцезахисна шторка <span class="text-white/30">на лобове скло </span> <br>(130х60 см) 
+                    Сонцезахисна <span class="text-white/30">шторка</span> <br>(130х60 см)
                 </h1>
 
                 <div class="unbounded text-3xl font-black italic text-red-500 mb-10">167₴</div>
 
-                <p class="text-gray-400 text-lg leading-relaxed mb-12 max-w-xl font-medium">
-                    Рятуйся від спеки в авто! Ця шторка — найпростіший і найдешевший спосіб зробити так, щоб салон не перетворювався на духовку, поки машина стоїть на сонці. <br><br>
-                    <span class="text-white">●</span> Відбиває сонце: Спеціальний фольгований шар не дає променям нагрівати торпеду та кермо <br>
-                    <span class="text-white">●</span> Захищає салон: Пластик не вигорає і не тріскається від перегріву <br>
-                    <span class="text-white">●</span> Зручна: Складається за секунду, у складеному вигляді майже не займає місця <br> 
-                    <span class="text-white">●</span> Просте кріплення: Тримається на присосках (йдуть у комплекті) — причепив і забув.  
-                </p>
-                <p class="text-gray-400 text-lg leading-relaxed mb-12 max-w-xl font-medium"></p>
-                Розмір: 130х60 см — підходить для більшості легкових авто.
-                    <span class="text-white">●</span> Незамінна річ на літо, щоб сідати в прохолодну машину! <br>
-                 </p>
+                <div class="text-gray-400 text-lg leading-relaxed mb-12 max-w-xl font-medium">
+                    <p class="mb-6">Рятуйся від спеки! Найпростіший спосіб захистити салон від перетворення на «духовку» під час стоянки на сонці.</p>
+                    <ul class="space-y-2">
+                        <li><span class="text-white">●</span> **Термозахист:** Фольгований шар відбиває до 99% променів</li>
+                        <li><span class="text-white">●</span> **Збереження:** Пластик та оббивка не вигорають і не тріскаються</li>
+                        <li><span class="text-white">●</span> **Компактність:** Складається за секунду, поміщається під сидіння</li>
+                        <li><span class="text-white">●</span> **Універсальність:** Розмір 130х60 см ідеальний для більшості авто</li>
+                    </ul>
+                </div>
+
                 <div class="glass-card p-8 md:p-12">
-                    <h3 class="unbounded text-sm font-bold mb-8 uppercase tracking-widest text-white/50">Оформити замовлення</h3>
+                    <h3 class="unbounded text-sm font-bold mb-8 uppercase tracking-widest text-white/50">Деталі доставки</h3>
                     <form action="https://api.web3forms.com/submit" method="POST" class="space-y-4">
                         <input type="hidden" name="access_key" value="6fb49301-bc8d-4639-84c1-d5093c667dda">
-                        <input type="hidden" name="subject" value="Нове замовлення: Сонцезахисна шторка на лобове скло (130х60 см) ">
+                        <input type="hidden" name="subject" value="Замовлення: Сонцезахисна шторка 130х60">
                         
-                        <input type="text" name="name" placeholder="Ваше ім'я" required class="input-field font-bold">
-                        <input type="tel" name="phone" placeholder="+38 (0__) --- -- --" required class="input-field font-bold">
-                        <input type="number" name="quantity" placeholder="Кількість шт." min="1" required class="input-field font-bold">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <input type="text" name="name" placeholder="Ім'я та Прізвище" required class="input-field font-bold text-sm">
+                            <input type="tel" name="phone" placeholder="+38 (0__) --- -- --" required class="input-field font-bold text-sm">
+                        </div>
+
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                            <select name="region" required class="input-field font-bold text-sm cursor-pointer text-gray-400 focus:text-white">
+                                <option value="" disabled selected>Область</option>
+                                <option value="Івано-Франківська">Івано-Франківська</option>
+                                <option value="Київська">Київська</option>
+                                <option value="Львівська">Львівська</option>
+                                <option value="Одеська">Одеська</option>
+                                <option value="Дніпропетровська">Дніпропетровська</option>
+                                <option value="Харківська">Харківська</option>
+                                <option value="Вінницька">Вінницька</option>
+                                <option value="Волинська">Волинська</option>
+                                <option value="Житомирська">Житомирська</option>
+                                <option value="Закарпатська">Закарпатська</option>
+                                <option value="Запорізька">Запорізька</option>
+                                <option value="Кіровоградська">Кіровоградська</option>
+                                <option value="Миколаївська">Миколаївська</option>
+                                <option value="Полтавська">Полтавська</option>
+                                <option value="Рівненська">Рівненська</option>
+                                <option value="Сумська">Сумська</option>
+                                <option value="Тернопільська">Тернопільська</option>
+                                <option value="Хмельницька">Хмельницька</option>
+                                <option value="Черкаська">Черкаська</option>
+                                <option value="Чернівецька">Чернівецька</option>
+                                <option value="Чернігівська">Чернігівська</option>
+                            </select>
+                            <input type="text" name="city" placeholder="Місто" required class="input-field font-bold text-sm">
+                            <input type="text" name="warehouse" placeholder="Відділення №" required class="input-field font-bold text-sm">
+                        </div>
+
+                        <input type="number" name="quantity" placeholder="Кількість шт." min="1" required class="input-field font-bold text-sm">
                         
-                        <button type="submit" class="btn-order unbounded text-sm">Замовити зараз</button>
+                        <textarea name="comment" placeholder="Ваш коментар (необов'язково)" rows="2" class="input-field font-bold text-sm resize-none"></textarea>
+                        
+                        <button type="submit" class="btn-order unbounded text-sm">Підтвердити замовлення</button>
                     </form>
                     <p class="text-center text-[9px] text-gray-500 mt-6 uppercase tracking-[0.2em] font-bold">
-                        Менеджер зв'яжеться для уточнення моделі авто
+                        Менеджер зв'яжеться з вами для уточнення
                     </p>
                 </div>
             </div>

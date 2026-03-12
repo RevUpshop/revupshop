@@ -64,6 +64,11 @@
             overflow: hidden;
             border: 1px solid rgba(255, 255, 255, 0.1);
         }
+
+        select.input-field option {
+            background: #1a1a1a;
+            color: white;
+        }
     </style>
 </head>
 <body>
@@ -96,26 +101,59 @@
 
                 <p class="text-gray-400 text-lg leading-relaxed mb-12 max-w-xl font-medium">
                     Універсальне кріплення для швидкої фіксації елементів салону, оббивки багажника та пластикових панелей під капотом. Система Push-Type забезпечує моментальний монтаж без інструментів. <br><br>
-                    <span class="text-white">●</span> **Швидкість:** Фіксація одним натисканням на центральний штифт <br>
-                    <span class="text-white">●</span> **Універсальність:** Підходить для більшості марок авто (діаметр 8мм) <br>
-                    <span class="text-white">●</span> **RevUp Quality:** Виготовлено з еластичного нейлону, що не тріскається при низьких температурах <br> 
-                    <span class="text-white">●</span> **Призначення:** Карти дверей, пороги, захисні кожухи двигуна.
+                    <span class="text-white">●</span> **Швидкість:** Фіксація одним натисканням на штифт <br>
+                    <span class="text-white">●</span> **Універсальність:** Підходить для більшості марок авто <br>
+                    <span class="text-white">●</span> **RevUp Quality:** Міцний нейлон, стійкий до морозів.
                 </p>
 
                 <div class="glass-card p-8 md:p-12">
-                    <h3 class="unbounded text-sm font-bold mb-8 uppercase tracking-widest text-white/50">Оформити замовлення</h3>
+                    <h3 class="unbounded text-sm font-bold mb-8 uppercase tracking-widest text-white/50">Деталі доставки</h3>
                     <form action="https://api.web3forms.com/submit" method="POST" class="space-y-4">
                         <input type="hidden" name="access_key" value="6fb49301-bc8d-4639-84c1-d5093c667dda">
-                        <input type="hidden" name="subject" value="Нове замовлення: Пістонні кліпси">
+                        <input type="hidden" name="subject" value="Нове замовлення: Пістонна кліпса">
                         
-                        <input type="text" name="name" placeholder="Ваше ім'я" required class="input-field font-bold">
-                        <input type="tel" name="phone" placeholder="+38 (0__) --- -- --" required class="input-field font-bold">
-                        <input type="number" name="quantity" placeholder="Кількість шт." min="1" required class="input-field font-bold">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <input type="text" name="name" placeholder="Ім'я та Прізвище" required class="input-field font-bold text-sm">
+                            <input type="tel" name="phone" placeholder="+38 (0__) --- -- --" required class="input-field font-bold text-sm">
+                        </div>
+
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                            <select name="region" required class="input-field font-bold text-sm cursor-pointer text-gray-400 focus:text-white">
+                                <option value="" disabled selected>Область</option>
+                                <option value="Івано-Франківська">Івано-Франківська</option>
+                                <option value="Київська">Київська</option>
+                                <option value="Львівська">Львівська</option>
+                                <option value="Одеська">Одеська</option>
+                                <option value="Дніпропетровська">Дніпропетровська</option>
+                                <option value="Харківська">Харківська</option>
+                                <option value="Вінницька">Вінницька</option>
+                                <option value="Волинська">Волинська</option>
+                                <option value="Житомирська">Житомирська</option>
+                                <option value="Закарпатська">Закарпатська</option>
+                                <option value="Запорізька">Запорізька</option>
+                                <option value="Кіровоградська">Кіровоградська</option>
+                                <option value="Миколаївська">Миколаївська</option>
+                                <option value="Полтавська">Полтавська</option>
+                                <option value="Рівненська">Рівненська</option>
+                                <option value="Сумська">Сумська</option>
+                                <option value="Тернопільська">Тернопільська</option>
+                                <option value="Хмельницька">Хмельницька</option>
+                                <option value="Черкаська">Черкаська</option>
+                                <option value="Чернівецька">Чернівецька</option>
+                                <option value="Чернігівська">Чернігівська</option>
+                            </select>
+                            <input type="text" name="city" placeholder="Місто/Село" required class="input-field font-bold text-sm">
+                            <input type="text" name="warehouse" placeholder="Відділення №" required class="input-field font-bold text-sm">
+                        </div>
+
+                        <input type="number" name="quantity" placeholder="Кількість шт." min="1" required class="input-field font-bold text-sm">
                         
-                        <button type="submit" class="btn-order unbounded text-sm">Замовити зараз</button>
+                        <textarea name="comment" placeholder="Ваш коментар (необов'язково)" rows="2" class="input-field font-bold text-sm resize-none"></textarea>
+                        
+                        <button type="submit" class="btn-order unbounded text-sm">Підтвердити замовлення</button>
                     </form>
                     <p class="text-center text-[9px] text-gray-500 mt-6 uppercase tracking-[0.2em] font-bold">
-                        REVUP PERFORMANCE • Швидкі рішення для твого авто
+                        REVUP PERFORMANCE • Швидка відправка
                     </p>
                 </div>
             </div>

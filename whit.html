@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Пуш-кліпса кузова "Ялинка" | RevUp Premium</title>
+    <title>Пуш-кліпса "Ялинка" Біла | RevUp Premium</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;500;800&family=Unbounded:wght@400;900&display=swap" rel="stylesheet">
     <style>
@@ -64,13 +64,18 @@
             overflow: hidden;
             border: 1px solid rgba(255, 255, 255, 0.1);
         }
+        
+        select.input-field option {
+            background: #1a1a1a;
+            color: white;
+        }
     </style>
 </head>
 <body>
 
     <header class="p-8 md:p-12 flex justify-between items-center max-w-[1440px] mx-auto">
         <a href="index.html" class="unbounded text-[10px] font-black uppercase tracking-[0.3em] text-gray-500 hover:text-red-500 transition-colors">
-            ← Back to Shop
+            ← Назад до магазину
         </a>
         <div class="unbounded text-xl font-black italic tracking-tighter">REV<span class="text-red-500">UP</span></div>
     </header>
@@ -82,7 +87,7 @@
                 <img src="whit.jpg" 
                      onerror="this.src='https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?q=80&w=1983'" 
                      class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" 
-                     alt="Пуш-кліпса кузова біла">
+                     alt="Пуш-кліпса ялинка біла RevUp">
             </div>
 
             <div>
@@ -95,27 +100,60 @@
                 <div class="unbounded text-3xl font-black italic text-red-500 mb-10">11₴ <span class="text-sm text-gray-500">/ шт.</span></div>
 
                 <p class="text-gray-400 text-lg leading-relaxed mb-12 max-w-xl font-medium">
-                    Надійне універсальне кріплення для елементів інтер'єру та кузова вашого авто. Завдяки багатоярусній формі "ялинки" гарантує щільну посадку без люфтів. <br><br>
-                    <span class="text-white">●</span> **Міцність:** Гнучкий нейлон, стійкий до перепадів температур <br>
-                    <span class="text-white">●</span> **Універсальність:** Підходить для більшості марок авто <br>
-                    <span class="text-white">●</span> **Колір:** Чистий білий для внутрішніх панелей та обшивки <br> 
-                    <span class="text-white">●</span> **Монтаж:** Легко встановлюється вручну без спеціального інструменту.
+                    Універсальне кріплення для обшивки салону, дверних карт та елементів інтер'єру. Багатоярусна форма "ялинки" гарантує надійну фіксацію без люфтів та скрипів. <br><br>
+                    <span class="text-white">●</span> **Надійність:** Багатоступенева розпірна фіксація <br>
+                    <span class="text-white">●</span> **Універсальність:** Підходить для більшості марок автомобілів <br>
+                    <span class="text-white">●</span> **RevUp Quality:** Гнучкий та міцний нейлон, що не ламається при монтажі.
                 </p>
 
                 <div class="glass-card p-8 md:p-12">
-                    <h3 class="unbounded text-sm font-bold mb-8 uppercase tracking-widest text-white/50">Оформити замовлення</h3>
+                    <h3 class="unbounded text-sm font-bold mb-8 uppercase tracking-widest text-white/50">Деталі доставки</h3>
                     <form action="https://api.web3forms.com/submit" method="POST" class="space-y-4">
                         <input type="hidden" name="access_key" value="6fb49301-bc8d-4639-84c1-d5093c667dda">
-                        <input type="hidden" name="subject" value="Нове замовлення: Білі пуш-кліпси">
+                        <input type="hidden" name="subject" value="Замовлення: Біла пуш-кліпса (Ялинка)">
                         
-                        <input type="text" name="name" placeholder="Ваше ім'я" required class="input-field font-bold">
-                        <input type="tel" name="phone" placeholder="+38 (0__) --- -- --" required class="input-field font-bold">
-                        <input type="number" name="quantity" placeholder="Кількість шт." min="1" required class="input-field font-bold">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <input type="text" name="name" placeholder="Ім'я та Прізвище" required class="input-field font-bold text-sm">
+                            <input type="tel" name="phone" placeholder="+38 (0__) --- -- --" required class="input-field font-bold text-sm">
+                        </div>
+
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                            <select name="region" required class="input-field font-bold text-sm cursor-pointer text-gray-400 focus:text-white">
+                                <option value="" disabled selected>Область</option>
+                                <option value="Івано-Франківська">Івано-Франківська</option>
+                                <option value="Київська">Київська</option>
+                                <option value="Львівська">Львівська</option>
+                                <option value="Одеська">Одеська</option>
+                                <option value="Дніпропетровська">Дніпропетровська</option>
+                                <option value="Харківська">Харківська</option>
+                                <option value="Вінницька">Вінницька</option>
+                                <option value="Волинська">Волинська</option>
+                                <option value="Житомирська">Житомирська</option>
+                                <option value="Закарпатська">Закарпатська</option>
+                                <option value="Запорізька">Запорізька</option>
+                                <option value="Кіровоградська">Кіровоградська</option>
+                                <option value="Миколаївська">Миколаївська</option>
+                                <option value="Полтавська">Полтавська</option>
+                                <option value="Рівненська">Рівненська</option>
+                                <option value="Сумська">Сумська</option>
+                                <option value="Тернопільська">Тернопільська</option>
+                                <option value="Хмельницька">Хмельницька</option>
+                                <option value="Черкаська">Черкаська</option>
+                                <option value="Чернівецька">Чернівецька</option>
+                                <option value="Чернігівська">Чернігівська</option>
+                            </select>
+                            <input type="text" name="city" placeholder="Місто/Село" required class="input-field font-bold text-sm">
+                            <input type="text" name="warehouse" placeholder="Відділення №" required class="input-field font-bold text-sm">
+                        </div>
+
+                        <input type="number" name="quantity" placeholder="Кількість шт." min="1" required class="input-field font-bold text-sm">
                         
-                        <button type="submit" class="btn-order unbounded text-sm">Замовити зараз</button>
+                        <textarea name="comment" placeholder="Ваш коментар (необов'язково)" rows="2" class="input-field font-bold text-sm resize-none"></textarea>
+                        
+                        <button type="submit" class="btn-order unbounded text-sm">Підтвердити замовлення</button>
                     </form>
                     <p class="text-center text-[9px] text-gray-500 mt-6 uppercase tracking-[0.2em] font-bold">
-                        REVUP PERFORMANCE • Швидка доставка по всій Україні
+                        REVUP PERFORMANCE • ПРЕМІУМ ЯКІСТЬ
                     </p>
                 </div>
             </div>
