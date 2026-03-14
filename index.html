@@ -735,155 +735,194 @@ html {
         <svg width="28" height="28" fill="white" viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
     </a>
 
-   <script>
-        // Header Scroll Effect
-        window.addEventListener('scroll', () => {
-            const header = document.getElementById('header');
-            if (header) {
-                window.scrollY > 50 ? header.classList.add('header-scrolled') : header.classList.remove('header-scrolled');
+  <script>
+    // --- ЕФЕКТИ ХЕДЕРА ТА ЛОГОТИПА ---
+    window.addEventListener('scroll', () => {
+        const header = document.getElementById('header');
+        if (header) {
+            window.scrollY > 50 ? header.classList.add('header-scrolled') : header.classList.remove('header-scrolled');
+        }
+    });
+
+    const logo = document.getElementById('mainLogo');
+    if (logo) {
+        function triggerJump() {
+            logo.classList.add('jump-active');
+            setTimeout(() => logo.classList.remove('jump-active'), 900);
+        }
+        setInterval(triggerJump, 4000);
+        logo.addEventListener('mouseenter', triggerJump);
+    }
+
+    // --- СИСТЕМА ЧАТУ ---
+    function toggleRevChat() {
+        const panel = document.getElementById('chatPanel');
+        if (panel) panel.classList.toggle('active');
+    }
+
+    // --- ПЛАВНА ПОЯВА ЕЛЕМЕНТІВ ---
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = "1";
+                entry.target.style.transform = "translateY(0)";
             }
         });
+    }, { threshold: 0.1 });
 
-        // Jumping Logo Engine
-        const logo = document.getElementById('mainLogo');
-        if (logo) {
-            function triggerJump() {
-                logo.classList.add('jump-active');
-                setTimeout(() => logo.classList.remove('jump-active'), 900);
-            }
-            setInterval(triggerJump, 4000);
-            logo.addEventListener('mouseenter', triggerJump);
+    document.querySelectorAll('.card-rev, .group').forEach(el => {
+        el.style.opacity = "0";
+        el.style.transform = "translateY(30px)";
+        el.style.transition = "all 0.8s ease-out";
+        observer.observe(el);
+    });
+
+    // --- ЛОГІКА КОШИКА REVUP ---
+    let revupCart = JSON.parse(localStorage.getItem('revup_cart')) || [];
+
+    function toggleCart(isOpen) {
+        const sidebar = document.getElementById('cart-sidebar');
+        const backdrop = document.getElementById('cart-backdrop');
+        
+        if (!sidebar || !backdrop) return;
+
+        if (isOpen) {
+            sidebar.classList.remove('translate-x-full');
+            backdrop.classList.remove('opacity-0', 'pointer-events-none');
+            backdrop.classList.add('opacity-100', 'pointer-events-auto');
+            // Фікс скролу
+            document.body.style.overflow = 'hidden';
+            document.documentElement.style.overflow = 'hidden';
+        } else {
+            sidebar.classList.add('translate-x-full');
+            backdrop.classList.add('opacity-0', 'pointer-events-none');
+            backdrop.classList.remove('opacity-100', 'pointer-events-auto');
+            // Повернення скролу
+            document.body.style.overflow = '';
+            document.documentElement.style.overflow = '';
         }
+    }
 
-        // Chat Toggle System
-        function toggleRevChat() {
-            const panel = document.getElementById('chatPanel');
-            if (panel) panel.classList.toggle('active');
-        }
-
-        document.addEventListener('click', (e) => {
-            const panel = document.getElementById('chatPanel');
-            if (panel && !e.target.closest('.rev-chat-container')) {
-                panel.classList.remove('active');
-            }
-        });
-
-        // Smooth reveal on scroll
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = "1";
-                    entry.target.style.transform = "translateY(0)";
-                }
+    function addToCart(name, price, image) {
+        const existing = revupCart.find(item => item.name === name);
+        if (existing) {
+            existing.qty += 1;
+        } else {
+            revupCart.push({ 
+                id: Date.now(), 
+                name: name, 
+                price: parseInt(price), 
+                image: image, 
+                qty: 1 
             });
-        }, { threshold: 0.1 });
-
-        document.querySelectorAll('.card-rev, .group').forEach(el => {
-            el.style.opacity = "0";
-            el.style.transform = "translateY(30px)";
-            el.style.transition = "all 0.8s ease-out";
-            observer.observe(el);
-        });
-
-        // --- ЛОГІКА КОШИКА ---
-        let revupCart = JSON.parse(localStorage.getItem('revup_cart')) || [];
-
-        function toggleCart(isOpen) {
-            const sidebar = document.getElementById('cart-sidebar');
-            const backdrop = document.getElementById('cart-backdrop');
-            if (sidebar && backdrop) {
-                sidebar.style.transform = isOpen ? "translateX(0)" : "translateX(100%)";
-                backdrop.style.opacity = isOpen ? "1" : "0";
-                backdrop.style.pointerEvents = isOpen ? "auto" : "none";
-                document.body.style.overflow = isOpen ? "hidden" : "";
-            }
         }
+        saveCart();
+        renderCart();
+        toggleCart(true);
+    }
 
-        function addToCart(name, price, image) {
-            const existing = revupCart.find(item => item.name === name);
-            if (existing) {
-                existing.qty += 1;
-            } else {
-                revupCart.push({ id: Date.now(), name, price: parseInt(price), image, qty: 1 });
+    function changeQty(id, delta) {
+        const itemIndex = revupCart.findIndex(i => i.id === id);
+        if (itemIndex !== -1) {
+            revupCart[itemIndex].qty += delta;
+            if (revupCart[itemIndex].qty < 1) {
+                revupCart.splice(itemIndex, 1);
             }
             saveCart();
             renderCart();
-            toggleCart(true);
         }
+    }
 
-        function changeQty(id, delta) {
-            const item = revupCart.find(i => i.id === id);
-            if (item) {
-                item.qty += delta;
-                if (item.qty < 1) revupCart = revupCart.filter(i => i.id !== id);
-                saveCart();
-                renderCart();
-            }
-        }
+    function saveCart() {
+        localStorage.setItem('revup_cart', JSON.stringify(revupCart));
+    }
 
-        function saveCart() {
-            localStorage.setItem('revup_cart', JSON.stringify(revupCart));
-        }
+    function renderCart() {
+        const container = document.getElementById('cart-items-container');
+        const totalDisplay = document.getElementById('cart-total-price');
+        const badge = document.getElementById('cart-count'); 
+        
+        if (!container) return;
 
-        function renderCart() {
-            const container = document.getElementById('cart-items-container');
-            const totalDisplay = document.getElementById('cart-total-price');
-            const badge = document.getElementById('cart-count');
-            
-            let total = 0;
-            let itemsCount = 0;
+        let total = 0;
+        let itemsCount = 0;
 
-            if (!container) return;
-
-            if (revupCart.length === 0) {
-                container.innerHTML = `<div class="py-20 text-center opacity-20"><p class="unbounded text-[10px] font-black uppercase tracking-widest">Кошик порожній</p></div>`;
-                if (totalDisplay) totalDisplay.innerText = "0₴";
-                if (badge) badge.innerText = "0";
-                return;
-            }
-
-            container.innerHTML = revupCart.map(item => {
-                total += item.price * item.qty;
-                itemsCount += item.qty;
-                return `
-                <div class="flex items-center gap-4 bg-white/[0.03] p-4 rounded-2xl border border-white/5">
-                    <img src="${item.image}" class="w-16 h-16 object-cover rounded-xl border border-white/10">
-                    <div class="flex-1">
-                        <h4 class="text-[10px] font-bold uppercase text-white mb-2">${item.name}</h4>
-                        <div class="flex items-center gap-4">
-                            <div class="flex items-center border border-white/10 rounded-full px-2">
-                                <button onclick="changeQty(${item.id}, -1)" class="w-6 h-6 text-white/40 hover:text-white">-</button>
-                                <span class="text-[10px] font-bold px-2 text-white">${item.qty}</span>
-                                <button onclick="changeQty(${item.id}, 1)" class="w-6 h-6 text-white/40 hover:text-white">+</button>
-                            </div>
-                            <span class="text-red-500 font-bold text-xs italic">${item.price * item.qty}₴</span>
-                        </div>
-                    </div>
+        if (revupCart.length === 0) {
+            container.innerHTML = `
+                <div class="py-20 text-center opacity-20">
+                    <p class="unbounded text-[10px] font-black uppercase tracking-widest">Кошик порожній</p>
                 </div>`;
-            }).join('');
-
-            if (totalDisplay) totalDisplay.innerText = total + "₴";
-            if (badge) badge.innerText = itemsCount;
+            if (totalDisplay) totalDisplay.innerText = "0₴";
+            if (badge) badge.innerText = "0";
+            return;
         }
 
-        document.addEventListener('DOMContentLoaded', renderCart);
-    </script>
+        container.innerHTML = revupCart.map(item => {
+            const itemTotal = item.price * item.qty;
+            total += itemTotal;
+            itemsCount += item.qty;
+            return `
+            <div class="flex items-center gap-4 bg-white/[0.03] p-4 rounded-2xl border border-white/5 transition-all">
+                <img src="${item.image}" class="w-16 h-16 object-cover rounded-xl border border-white/10">
+                <div class="flex-1">
+                    <h4 class="text-[10px] font-bold uppercase text-white mb-2 tracking-tight">${item.name}</h4>
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center border border-white/10 rounded-full px-1 bg-black/20">
+                            <button onclick="changeQty(${item.id}, -1)" class="w-8 h-8 flex items-center justify-center text-white/40 hover:text-red-500 transition-colors">-</button>
+                            <span class="text-[11px] font-black px-2 text-white italic">${item.qty}</span>
+                            <button onclick="changeQty(${item.id}, 1)" class="w-8 h-8 flex items-center justify-center text-white/40 hover:text-red-500 transition-colors">+</button>
+                        </div>
+                        <span class="text-red-500 font-black text-xs italic">${itemTotal}₴</span>
+                    </div>
+                </div>
+            </div>`;
+        }).join('');
+
+        if (totalDisplay) totalDisplay.innerText = total + "₴";
+        if (badge) badge.innerText = itemsCount;
+    }
+
+    // --- ОБРОБНИКИ ПОДІЙ ---
+    document.addEventListener('click', (e) => {
+        // Закриття чату
+        const panel = document.getElementById('chatPanel');
+        if (panel && !e.target.closest('.rev-chat-container')) {
+            panel.classList.remove('active');
+        }
+        
+        // Закриття кошика (хрестик або фон)
+        if (e.target.id === 'cart-backdrop' || e.target.closest('[onclick="toggleCart(false)"]')) {
+            toggleCart(false);
+        }
+    });
+
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') toggleCart(false);
+    });
+
+    document.addEventListener('DOMContentLoaded', renderCart);
+</script>
 
     <div id="cart-wrapper" class="relative z-[999]">
         <div id="cart-backdrop" onclick="toggleCart(false)" class="fixed inset-0 bg-black/60 backdrop-blur-sm opacity-0 pointer-events-none transition-all duration-500"></div>
 
         <div id="cart-sidebar" class="fixed top-0 right-0 h-full w-full md:w-[480px] bg-[#0a0a0a] border-l border-white/5 translate-x-full transition-transform duration-700 ease-[cubic-bezier(0.23,1,0.32,1)] flex flex-col shadow-2xl">
-            
-            <div class="p-8 flex justify-between items-center border-b border-white/5">
-                <div>
-                    <h2 class="unbounded text-xs font-black uppercase tracking-[0.3em] text-white">Кошик</h2>
-                    <p class="text-[9px] text-red-500 font-bold uppercase mt-1 tracking-widest">RevUp Performance</p>
-                </div>
-                <button onclick="toggleCart(false)" class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-white hover:bg-white hover:text-black transition-all">✕</button>
-            </div>
+    
+    <button onclick="toggleCart(false)" class="absolute top-4 right-4 z-[101] w-12 h-12 bg-white/10 backdrop-blur-md rounded-full flex items-center justify-center text-white border border-white/20 active:bg-red-500 md:hidden">
+        <span class="text-2xl">✕</span>
+    </button>
 
-            <div id="cart-items-container" class="flex-1 overflow-y-auto p-6 space-y-4 custom-scrollbar">
-                </div>
+    <div class="p-8 flex justify-between items-center border-b border-white/5">
+        <div>
+            <h2 class="unbounded text-xs font-black uppercase tracking-[0.3em] text-white">Кошик</h2>
+            <p class="text-[9px] text-red-500 font-bold uppercase mt-1 tracking-widest">RevUp Performance</p>
+        </div>
+        <button onclick="toggleCart(false)" class="hidden md:flex w-10 h-10 rounded-full border border-white/10 items-center justify-center text-white hover:bg-white hover:text-black transition-all">✕</button>
+    </div>
+
+    <div id="cart-items-container" class="flex-1 overflow-y-auto p-6 space-y-4 custom-scrollbar">
+        </div>
+    </div>
 
             <div class="p-8 bg-[#0d0d0d] border-t border-white/5">
                 <div class="flex justify-between items-end mb-8">
